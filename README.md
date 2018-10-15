@@ -48,6 +48,7 @@ Instructions for using a package manager is included.
   * Postman - GUI (free)      https://www.getpostman.com/
   * Httpie - CLI  (free)      https://httpie.org/
   * Paw Cloud     (for a fee) https://paw.cloud/
+* Docker
 
 ### I. Text Editor 
 Feel free to use the text editor of choise. 
@@ -94,6 +95,12 @@ _Windows 10_
 ```
 
 ```
+### IV. Docker
+_macOS_
+https://store.docker.com/editions/community/docker-ce-desktop-mac 
+
+_Windows 10_
+https://store.docker.com/editions/community/docker-ce-desktop-windows
 
 
 items
