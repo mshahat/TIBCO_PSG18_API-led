@@ -32,11 +32,11 @@ These accounts are needed to run through the labs:
 ## Software
 
 * Text editor e.g. Microsoft VSCode
-* Virtualbox, to run a vm for the Events Processing lab
+* Virtualbox > 5.2.18 , to run a vm for the Events Processing lab
 * An HTTP client, to test APIs
-  * Postman - GUI (free)
-  * Httpie - CLI  (free)
-  * Paw Cloud     (for a fee)
+  * Postman - GUI (free)      https://www.getpostman.com/
+  * Httpie - CLI  (free)      https://httpie.org/
+  * Paw Cloud     (for a fee) https://paw.cloud/
 
 ### Text Editor 
 Feel free to use the text editor of choise. 
