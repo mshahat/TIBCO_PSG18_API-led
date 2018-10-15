@@ -1,10 +1,10 @@
 {
-	"CustID" : 123,
-	"Name" : "Moonlit Semiconductors",
-	"Address" : "3 Silicone alley",
-	"City" : "Palo Alto",
-	"State" : "CA",
-	"zip" : "92614",
+	"CustID": 123,
+	"Name": "Moonlit Semiconductors",
+	"Address": "3 Silicone alley",
+	"City": "Palo Alto",
+	"State": "CA",
+	"zip": "92614",
 	"CreditLimit": 12000000.0,
 	"Phone": "(949)202-8025"
 }

@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema elementFormDefault="qualified" targetNamespace="/T1539633605064Converted/JsonSchema" xmlns:tns="/T1539633605064Converted/JsonSchema" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="createCustomerResponse" type="tns:createCustomerResponse"/>
+    <xs:complexType name="createCustomerResponse">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="customrname" type="xs:string"/>
+            <xs:element minOccurs="0" name="customerid" type="xs:integer"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="GiveNewSchemaNameHere" type="tns:GiveNewSchemaNameHere"/>
+    <xs:complexType name="GiveNewSchemaNameHere">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="status" type="xs:integer"/>
+            <xs:element minOccurs="0" name="errorID" type="xs:string"/>
+            <xs:element minOccurs="0" name="errorCode" type="xs:string"/>
+            <xs:element minOccurs="0" name="errorType" type="xs:string"/>
+            <xs:element minOccurs="0" name="more_info" type="xs:string"/>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="context">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="name" type="xs:string"/>
+                        <xs:element minOccurs="0" name="value" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="orderline" type="tns:orderline"/>
+    <xs:complexType name="orderline">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="customerid" type="xs:integer"/>
+            <xs:element minOccurs="0" name="orderid" type="xs:integer"/>
+            <xs:element minOccurs="0" name="OrderDate" type="xs:date"/>
+            <xs:element minOccurs="0" name="DeliveryDate" type="xs:date"/>
+            <xs:element minOccurs="0" name="Qty" type="xs:integer"/>
+            <xs:element minOccurs="0" name="Price" type="xs:decimal"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="createCustomerResponseArray" type="tns:createCustomerResponseArray"/>
+    <xs:complexType name="createCustomerResponseArray">
+        <xs:sequence>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="createCustomerResponse" type="tns:createCustomerResponse"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="orderqtyInput" type="tns:orderqtyInput"/>
+    <xs:complexType name="orderqtyInput">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="itemid" type="xs:string"/>
+            <xs:element minOccurs="0" name="qty" type="xs:integer"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="order" type="tns:order"/>
+    <xs:complexType name="order">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="orderid" type="xs:integer"/>
+            <xs:element minOccurs="0" name="OrderDate" type="xs:date"/>
+            <xs:element minOccurs="0" name="DeliveryDate" type="xs:date"/>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="OrderLines">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="Itemno" type="xs:string"/>
+                        <xs:element minOccurs="0" name="Description" type="xs:string"/>
+                        <xs:element minOccurs="0" name="Qty" type="xs:integer"/>
+                        <xs:element minOccurs="0" name="Price" type="xs:decimal"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="customerArray" type="tns:customerArray"/>
+    <xs:complexType name="customerArray">
+        <xs:sequence>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="customer" type="tns:customer"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="orderArray" type="tns:orderArray"/>
+    <xs:complexType name="orderArray">
+        <xs:sequence>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="order" type="tns:order"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="ListOfOrders" type="tns:ListOfOrders"/>
+    <xs:complexType name="ListOfOrders">
+        <xs:sequence>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="ListOfOrders">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="customerid" type="xs:integer"/>
+                        <xs:element minOccurs="0" name="orderid" type="xs:integer"/>
+                        <xs:element minOccurs="0" name="OrderDate" type="xs:date"/>
+                        <xs:element minOccurs="0" name="DeliveryDate" type="xs:date"/>
+                        <xs:element minOccurs="0" name="ShipmentStatus" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="listofcustomers" type="tns:listofcustomers"/>
+    <xs:complexType name="listofcustomers">
+        <xs:sequence>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="listofcustomers">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="customerid" type="xs:integer"/>
+                        <xs:element minOccurs="0" name="Name" type="xs:string"/>
+                        <xs:element minOccurs="0" name="Address" type="xs:string"/>
+                        <xs:element minOccurs="0" name="Phone" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="svc_error" type="tns:svc_error"/>
+    <xs:complexType name="svc_error">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="status" type="xs:integer"/>
+            <xs:element minOccurs="0" name="errorID" type="xs:string"/>
+            <xs:element minOccurs="0" name="errorCode" type="xs:string"/>
+            <xs:element minOccurs="0" name="errorType" type="xs:string"/>
+            <xs:element minOccurs="0" name="more_info" type="xs:string"/>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="context">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="name" type="xs:string"/>
+                        <xs:element minOccurs="0" name="value" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="customer" type="tns:customer"/>
+    <xs:complexType name="customer">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="CustID" type="xs:integer"/>
+            <xs:element minOccurs="0" name="Name" type="xs:string"/>
+            <xs:element minOccurs="0" name="Address" type="xs:string"/>
+            <xs:element minOccurs="0" name="City" type="xs:string"/>
+            <xs:element minOccurs="0" name="State" type="xs:string"/>
+            <xs:element minOccurs="0" name="zip" type="xs:string"/>
+            <xs:element minOccurs="0" name="CreditLimit" type="xs:integer"/>
+            <xs:element minOccurs="0" name="Phone" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

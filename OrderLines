@@ -1,8 +1,0 @@
-{
-    "customerid" : "ABC123",
-    "orderid": "1234",
-    "OrderDate": "2018-09-26",
-    "DeliveryDate": "2018-10-24",
-    "Qty": 10,
-    "Price": 1200.5
-      }

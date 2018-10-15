@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+targetNamespace="http://www.example.org/NewXMLSchema" 
+xmlns:tns="http://www.example.org/NewXMLSchema" 
+elementFormDefault="qualified">
+
+    <xs:element name="orders">
+      <xs:complexType>
+      <xs:sequence>
+    	<xs:element name="orderElement" type="tns:orderType" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+      </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="order" type="tns:orderType"/>
+    
+    <xs:complexType name="orderType">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="OrderID" type="xs:integer"/>
+            <xs:element minOccurs="0" name="CustID" type="xs:integer"/>
+            <xs:element minOccurs="0" name="OrderDate" type="xs:date"/>
+            <xs:element minOccurs="0" name="DeliveryDate" type="xs:date"/>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="OrderLines">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="Itemno" type="xs:string"/>
+                        <xs:element minOccurs="0" name="Description" type="xs:string"/>
+                        <xs:element minOccurs="0" name="Qty" type="xs:integer"/>
+                        <xs:element minOccurs="0" name="Price" type="xs:decimal"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>
+

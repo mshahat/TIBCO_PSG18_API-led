@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sca:composite xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:BW="http://xsd.tns.tibco.com/amf/models/sca/implementationtype/BW" xmlns:JsonSchema="/T1538288874992Converted/JsonSchema" xmlns:JsonSchema_1="/T1538296370317Converted/JsonSchema" xmlns:JsonSchema_2="/T1539497522538Converted/JsonSchema" xmlns:JsonSchema_3="/T1539584938392Converted/JsonSchema" xmlns:JsonSchema_4="/T1539633605064Converted/JsonSchema" xmlns:XMLSchema="http://www.w3.org/2001/XMLSchema" xmlns:compositeext="http://schemas.tibco.com/amx/3.0/compositeext" xmlns:rest="http://xsd.tns.tibco.com/bw/models/binding/rest" xmlns:sca="http://www.osoa.org/xmlns/sca/1.0" xmlns:scact="http://xsd.tns.tibco.com/amf/models/sca/componentType" xmlns:scaext="http://xsd.tns.tibco.com/amf/models/sca/extensions" xmi:id="_vZ_mIMR5Eeix2MRPiG01tg" targetNamespace="http://tns.tibco.com/bw/composite/PSGOrderAPI" name="PSGOrderAPI" compositeext:version="1.0.0" compositeext:formatVersion="2">
+  <sca:service xmi:id="_ZsBw8NDGEei2vPGIFSLwqA" name="customers" promote="ComponentcustomerSVC/customers">
+    <sca:interface.wsdl xmi:id="_ZsGpcNDGEei2vPGIFSLwqA" interface="http://xmlns.example.com/20181015150447PLT#wsdl.interface(customers)" scaext:wsdlLocation="../Processes/psgorderapi/customerSVC.bwp"/>
+    <scaext:binding xsi:type="rest:RestServiceBinding" xmi:id="_ZsN-MNDGEei2vPGIFSLwqA" name="RestService" path="/customers" docBasePath="http://localhost:7777/PSGOrderAPI" docResourcePath="Customers" basePath="/" connector="psgorderapi.Process" structuredData="true" technologyVersion="2.0" implementation="Service Descriptors/PSGOrderAPI_1.0.json">
+      <operation xmi:id="_ZsPMUNDGEei2vPGIFSLwqA" operationName="post" nickname="postCustomers" httpMethod="POST" notes="create new customers. This is a maintenance use case. Customers may be created in the CRM system and synchronized through an ESB interface." responseStyle="array" requestStyle="array">
+        <responseStatus xmi:id="_ZsTdwNDGEei2vPGIFSLwqA" statusCode="401" reasonPhrase="Business Rule violated" elementQName="JsonSchema_4:svc_error"/>
+        <responseStatus xmi:id="_ZsUr4NDGEei2vPGIFSLwqA" statusCode="500" reasonPhrase="Something went wrong" elementQName="JsonSchema_4:svc_error"/>
+        <clientFormat>json</clientFormat>
+        <clientRequestFormat>json</clientRequestFormat>
+      </operation>
+      <operation xmi:id="_ZsPMUdDGEei2vPGIFSLwqA" operationName="get" nickname="getCustomers" httpMethod="GET" notes="Returns list of all customers" responseStyle="element">
+        <clientFormat>json</clientFormat>
+      </operation>
+      <parameters xmi:id="_ZsUr4dDGEei2vPGIFSLwqA"/>
+      <import xmi:id="_ZsUE0NDGEei2vPGIFSLwqA" importType="http://www.w3.org/2001/XMLSchema" namespace="/T1539633605064Converted/JsonSchema"/>
+      <advancedConfig xmi:id="_ZsN-MdDGEei2vPGIFSLwqA" blockingQueueSize="2147483647"/>
+    </scaext:binding>
+    <scact:bindingAdjunct xmi:id="_ZsPMUtDGEei2vPGIFSLwqA" bindingName="RestService"/>
+  </sca:service>
+  <sca:property xmi:id="_wMWQIMR5Eeix2MRPiG01tg" name="BW.APPNODE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_wMezAMR5Eeix2MRPiG01tg" name="BW.DEPLOYMENTUNIT.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_wMidYMR5Eeix2MRPiG01tg" name="BW.HOST.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_wMmu0MR5Eeix2MRPiG01tg" name="BW.DEPLOYMENTUNIT.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_wMsOYMR5Eeix2MRPiG01tg" name="BW.MODULE.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_wMwf0MR5Eeix2MRPiG01tg" name="BW.CLOUD.PORT" type="XMLSchema:int" scalable="true"/>
+  <sca:property xmi:id="_wM0KMMR5Eeix2MRPiG01tg" name="BW.MODULE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:component xmi:id="_VKxMQNDGEei2vPGIFSLwqA" name="ComponentcustomerSVC" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_VKxMQdDGEei2vPGIFSLwqA" processName="psgorderapi.customerSVC"/>
+    <sca:service xmi:id="_Zr9fgNDGEei2vPGIFSLwqA" name="customers">
+      <sca:interface.wsdl xmi:id="_Zr-toNDGEei2vPGIFSLwqA" interface="http://xmlns.example.com/20181015150447PLT#wsdl.interface(customers)"/>
+    </sca:service>
+  </sca:component>
+</sca:composite>

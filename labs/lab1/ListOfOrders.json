@@ -1,7 +1,9 @@
-[{
-    "customerid" : 123,
+[
+  {
+    "customerid": 123,
     "orderid": 1234,
     "OrderDate": "2018-09-26",
     "DeliveryDate": "2018-10-24",
-    "ShipmentStatus" : "Shipped"
-      }]
+    "ShipmentStatus": "Shipped"
+  }
+]

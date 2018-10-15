@@ -1,0 +1,16 @@
+{
+    "records": [{
+        "name": "TibcoCloud",
+        "items": [{
+            "localTimestamp": 1539633584000,
+            "localURI": "/PSGOrderAPI/Service Descriptors/PSGOrderAPI_1.0.json",
+            "disabled": false,
+            "remoteTimestamp": 1539564967000,
+            "localHash": "0a4491f8b378846e34330868f6a4eb987ac9c6f9",
+            "remoteId": "10",
+            "remoteHash": "0a4491f8b378846e34330868f6a4eb987ac9c6f9"
+        }],
+        "url": "https://integration.cloud.tibco.com:443"
+    }],
+    "resources": []
+}
