@@ -31,8 +31,8 @@ These accounts are needed to run through the labs:
 
 ## Software
 
-* Text editor e.g. Microsoft VSCode
-* Virtualbox > 5.2.18 , to run a vm for the Events Processing lab
+* Text editor e.g. Microsoft VSCode https://code.visualstudio.com/
+* Virtualbox > 5.2.18 , to run a vm for the Events Processing lab https://www.virtualbox.org/
 * An HTTP client, to test APIs
   * Postman - GUI (free)      https://www.getpostman.com/
   * Httpie - CLI  (free)      https://httpie.org/
