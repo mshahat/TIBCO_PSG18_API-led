@@ -46,8 +46,7 @@ Instructions for using a package manager is included.
 ### Text Editor 
 Feel free to use the text editor of choise. 
 
-macOS
-
+_macOS_
 ```
 brew cask install visual-studio-code
 ```
@@ -57,8 +56,7 @@ Windows 10
 
 ### Virtualbox 
 
-macOS
-
+_macOS_
 ```
 brew cask install virtualbox
 ```
@@ -69,13 +67,13 @@ Windows 10
 ### Http client
 
 #### Postman 
-macOS
+_macOS_
 ```
 brew cask install postman
 ```
 
 #### Httpie
-macOS
+_macOS_
 ```
 brew install httpie
 ```
