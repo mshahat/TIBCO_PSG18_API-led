@@ -49,6 +49,10 @@ Instructions for using a package manager is included.
   * Httpie - CLI  (free)      https://httpie.org/
   * Paw Cloud     (for a fee) https://paw.cloud/
 * Docker
+  * Make sure to pull this before arriving to the venue
+```shell
+docker pull mysql
+```
 
 ### I. Text Editor 
 Feel free to use the text editor of choise. 
