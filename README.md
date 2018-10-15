@@ -49,9 +49,37 @@ Feel free to use the text editor of choise.
 macOS
 
 ```
+brew cask install visual-studio-code
 ```
 
 Windows 10
+
+
+### Virtualbox 
+
+macOS
+
+```
+brew cask install virtualbox
+```
+
+Windows 10 
+
+
+### Http client
+
+#### Postman 
+macOS
+```
+brew cask install postman
+```
+
+#### Httpie
+macOS
+```
+brew install httpie
+```
+
 
 items
 
