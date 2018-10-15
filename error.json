@@ -1,0 +1,13 @@
+{
+  "status": 403,
+  "errorID": "6bd9c7af-edeb-4377-bdbe-6f5b3697c7ba",
+  "errorCode": "CUST_SVC_API_001",
+  "errorType": "BUSINESS",
+  "more_info": "http://loalhost/docs/messages/CUST_SVC_API_001",
+  "context": [
+      {
+      "name": "optional_name",
+      "value": "optional_value"
+      }
+             ]
+}
