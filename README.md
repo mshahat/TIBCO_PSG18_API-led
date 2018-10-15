@@ -42,9 +42,9 @@ Instructions for using a package manager is included.
 * Windows 10, https://chocolatey.org/  use Powershell
 
 ### Required software
-1. Text editor e.g. Microsoft VSCode https://code.visualstudio.com/
-2. Virtualbox > 5.2.18 , to run a vm for the Events Processing lab https://www.virtualbox.org/
-3. An HTTP client, to test APIs
+* Text editor e.g. Microsoft VSCode https://code.visualstudio.com/
+* Virtualbox > 5.2.18 , to run a vm for the Events Processing lab https://www.virtualbox.org/
+* An HTTP client, to test APIs
   * Postman - GUI (free)      https://www.getpostman.com/
   * Httpie - CLI  (free)      https://httpie.org/
   * Paw Cloud     (for a fee) https://paw.cloud/
