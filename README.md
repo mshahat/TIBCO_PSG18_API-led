@@ -1,6 +1,6 @@
 # TIBCO PSG 2018 | API Platform &amp; API-led Integration
 
-As part of this breakout, some exercises are planned, this guide is to help setting up the environment.
+As part of this breakout, some exercises are planned, this guide is to help setting up the environment and list labs and artefacts
 
 ## Labs
 The following labs are planned, click on each for more details
