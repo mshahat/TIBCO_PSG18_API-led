@@ -39,7 +39,7 @@ Expected to use the following capabilities
 Please choose to download and install each requirement. 
 Instructions for using a package manager is included. 
 * macOS, https://brew.sh/
-* Windows 10, https://chocolatey.org/
+* Windows 10, https://chocolatey.org/  use Powershell
 
 ### Required software
 * Text editor e.g. Microsoft VSCode https://code.visualstudio.com/
@@ -58,7 +58,7 @@ brew cask install visual-studio-code
 ```
 _Windows 10_
 ```
-
+C:\> choco install vscode
 ```
 
 ### Virtualbox 
@@ -70,7 +70,7 @@ brew cask install virtualbox
 ```
 _Windows 10_
 ```
-
+C:\> choco install virtualbox
 ```
 
 ### Http client
@@ -82,7 +82,7 @@ brew cask install postman
 ```
 _Windows 10_
 ```
-
+C:\> choco install postman
 ```
 
 #### Httpie
