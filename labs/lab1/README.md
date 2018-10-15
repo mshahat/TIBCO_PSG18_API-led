@@ -2,6 +2,10 @@
 
 Lab 1 artefacts could be found here
 
+## Lab 1 mysql datamodel
+The following is to run a mysql database in a docker container. 
+Then the DDLs to create the datamodel needed
+
 ```shell
 docker run -d -p 3306:3306 \
 -e "MYSQL_ROOT_PASSWORD=tibco123" --name LocalMySQL mysql 
