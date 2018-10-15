@@ -1,0 +1,660 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0",
+    "title": "PSGOrderAPI",
+    "x-lastModified": "Oct 13, 2018 22:07PM PST",
+    "description": "API designed for PSG Event"
+  },
+  "paths": {
+    "/customers": {
+      "get": {
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/listofcustomers"
+            },
+            "examples": {
+              "application/json": [
+                {
+                  "customerid": 123,
+                  "Name": "Moonlit Semiconductors",
+                  "Address": "3 Silicone alley, Palo Alto CA 94034",
+                  "Phone": "(949)202-8025"
+                }
+              ]
+            }
+          }
+        },
+        "parameters": [],
+        "operationId": "getCustomers",
+        "summary": "returns list of all customers",
+        "description": "Returns list of all customers"
+      },
+      "post": {
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/createCustomerResponse"
+              }
+            },
+            "examples": {
+              "application/json": [
+                [
+                  [
+                    {
+                      "customrname": "newly created customer name",
+                      "customerid": 123
+                    }
+                  ]
+                ]
+              ]
+            }
+          },
+          "401": {
+            "description": "Business Rule violated",
+            "schema": {
+              "$ref": "#/definitions/svc_error"
+            }
+          },
+          "500": {
+            "description": "Something went wrong",
+            "schema": {
+              "$ref": "#/definitions/svc_error"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "description": "creates customers and returns the ids for those customers",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/customer"
+              }
+            }
+          }
+        ],
+        "operationId": "postCustomers",
+        "consumes": [
+          "application/json"
+        ],
+        "summary": "create new order(s) for a customer",
+        "description": "create new orders for customerid given in the URI. Returns order ids. LAter will be modified to return links to orders."
+      }
+    },
+    "/customers/{customerid}": {
+      "get": {
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/customer"
+            }
+          },
+          "404": {
+            "description": "Invalid Customer ID specified in the call. Try again with a valid customer id",
+            "schema": {
+              "$ref": "#/definitions/svc_error"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "customerid",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "type": "string",
+            "format": ""
+          }
+        ],
+        "operationId": "getCustomers_customerid",
+        "summary": "returns customer details",
+        "description": "provides customer details for the customer id provided in the uri"
+      }
+    },
+    "/customers/{customerid}/orders": {
+      "get": {
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/ListOfOrders"
+              }
+            },
+            "examples": {
+              "application/json": [
+                [
+                  {
+                    "customerid": 123,
+                    "orderid": 1234,
+                    "OrderDate": "2018-09-26",
+                    "DeliveryDate": "2018-10-24",
+                    "ShipmentStatus": "Shipped"
+                  }
+                ]
+              ]
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "status",
+            "in": "query",
+            "description": "order status is used to filter orders with that status only",
+            "required": false,
+            "type": "string",
+            "format": "",
+            "default": "\"open\""
+          },
+          {
+            "name": "itemid",
+            "in": "query",
+            "description": "filter orders that have this item",
+            "required": false,
+            "type": "string",
+            "format": ""
+          },
+          {
+            "name": "customerid",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "type": "string",
+            "format": ""
+          }
+        ],
+        "operationId": "getCustomers_customerid_Orders",
+        "summary": "returns list of  orders for one customer",
+        "description": "provides all orders for a given customer"
+      },
+      "post": {
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success response",
+            "schema": {
+              "$ref": "#/definitions/GiveNewSchemaNameHere"
+            },
+            "examples": {
+              "application/json": {
+                "orderID": 123
+              }
+            }
+          },
+          "401": {
+            "description": "Business Rule Violated",
+            "schema": {
+              "$ref": "#/definitions/svc_error"
+            },
+            "examples": {
+              "application/json": {
+                "status": 401,
+                "errorID": "6bd9c7af-edeb-4377-bdbe-6f5b3697c7ba",
+                "errorCode": "CUST_SVC_API_001",
+                "errorType": "BUSINESS",
+                "more_info": "http://loalhost/docs/messages/CUST_SVC_API_001",
+                "context": [
+                  {
+                    "name": "optional_name",
+                    "value": "optional_value"
+                  }
+                ]
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/GiveNewSchemaNameHere"
+            },
+            "examples": {
+              "application/json": {
+                "status": 500,
+                "errorID": "6bd9c7af-edeb-4377-bdbe-6f5b3697c7ba",
+                "errorCode": "ORD_SVC_API_001",
+                "errorType": "TECHNICAL",
+                "more_info": "http://loalhost/docs/messages/ORD_SVC_API_001",
+                "context": [
+                  {
+                    "name": "optional_name",
+                    "value": "optional_value"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "customerid",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "type": "string",
+            "format": ""
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "description": "",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/order"
+              }
+            }
+          }
+        ],
+        "operationId": "postCustomers_customerid_Orders",
+        "consumes": [
+          "application/json"
+        ],
+        "description": "creates an order for customer, returns order id back",
+        "summary": "creates an order for customer, returns order id back"
+      }
+    },
+    "/orders/{orderid}": {
+      "get": {
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/order"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "orderid",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "type": "string",
+            "format": ""
+          }
+        ],
+        "operationId": "getOrders_orderid",
+        "description": "returns order with all lines",
+        "summary": "returns order with all lines"
+      },
+      "patch": {
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success response"
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "$ref": "#/definitions/GiveNewSchemaNameHere"
+            },
+            "examples": {
+              "application/json": {
+                "status": 403,
+                "errorID": "6bd9c7af-edeb-4377-bdbe-6f5b3697c7ba",
+                "errorCode": "CUST_SVC_API_001",
+                "errorType": "BUSINESS",
+                "more_info": "http://loalhost/docs/messages/CUST_SVC_API_001",
+                "context": [
+                  {
+                    "name": "optional_name",
+                    "value": "optional_value"
+                  }
+                ]
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/GiveNewSchemaNameHere"
+            },
+            "examples": {
+              "application/json": {
+                "status": 403,
+                "errorID": "6bd9c7af-edeb-4377-bdbe-6f5b3697c7ba",
+                "errorCode": "CUST_SVC_API_001",
+                "errorType": "BUSINESS",
+                "more_info": "http://loalhost/docs/messages/CUST_SVC_API_001",
+                "context": [
+                  {
+                    "name": "optional_name",
+                    "value": "optional_value"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "orderid",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "type": "string",
+            "format": ""
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "description": "Input schema for payload used to update order quantity of an item in an order",
+            "schema": {
+              "$ref": "#/definitions/GiveNewSchemaNameHere"
+            }
+          }
+        ],
+        "operationId": "patchOrders_orderid",
+        "consumes": [
+          "application/json"
+        ],
+        "description": "update the order quantity for a given item",
+        "summary": "update the order quantity for a given item"
+      }
+    }
+  },
+  "definitions": {
+    "order": {
+      "type": "object",
+      "properties": {
+        "orderid": {
+          "type": "integer",
+          "default": 1234
+        },
+        "OrderDate": {
+          "type": "string",
+          "format": "date",
+          "default": "2018-09-26"
+        },
+        "DeliveryDate": {
+          "type": "string",
+          "format": "date",
+          "default": "2018-10-24"
+        },
+        "OrderLines": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "Itemno": {
+                "type": "string",
+                "default": "abc"
+              },
+              "Description": {
+                "type": "string",
+                "default": "My second favorite Item"
+              },
+              "Qty": {
+                "type": "integer",
+                "default": 20
+              },
+              "Price": {
+                "type": "number",
+                "default": 2200.5
+              }
+            }
+          }
+        }
+      }
+    },
+    "orderline": {
+      "type": "object",
+      "properties": {
+        "customerid": {
+          "type": "integer",
+          "default": 123
+        },
+        "orderid": {
+          "type": "integer",
+          "default": 1234
+        },
+        "OrderDate": {
+          "type": "string",
+          "format": "date",
+          "default": "2018-09-26"
+        },
+        "DeliveryDate": {
+          "type": "string",
+          "format": "date",
+          "default": "2018-10-24"
+        },
+        "Qty": {
+          "type": "integer",
+          "default": 10
+        },
+        "Price": {
+          "type": "number",
+          "default": 1200.5
+        }
+      }
+    },
+    "customer": {
+      "type": "object",
+      "properties": {
+        "CustID": {
+          "type": "integer",
+          "default": 123
+        },
+        "Name": {
+          "type": "string",
+          "default": "Moonlit Semiconductors"
+        },
+        "Address": {
+          "type": "string",
+          "default": "3 Silicone alley"
+        },
+        "City": {
+          "type": "string",
+          "default": "Palo Alto"
+        },
+        "State": {
+          "type": "string",
+          "default": "CA"
+        },
+        "zip": {
+          "type": "string",
+          "default": "92614"
+        },
+        "CreditLimit": {
+          "type": "integer",
+          "default": 12000000
+        },
+        "Phone": {
+          "type": "string",
+          "default": "(949)202-8025"
+        }
+      }
+    },
+    "orderqtyInput": {
+      "type": "object",
+      "properties": {
+        "itemid": {
+          "type": "string",
+          "default": "1234"
+        },
+        "qty": {
+          "type": "integer",
+          "default": 123
+        }
+      }
+    },
+    "svc_error": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "integer",
+          "default": 401
+        },
+        "errorID": {
+          "type": "string",
+          "default": "6bd9c7af-edeb-4377-bdbe-6f5b3697c7ba"
+        },
+        "errorCode": {
+          "type": "string",
+          "default": "CUST_SVC_API_002"
+        },
+        "errorType": {
+          "type": "string",
+          "default": "TECHNICAL"
+        },
+        "more_info": {
+          "type": "string",
+          "default": "http://loalhost/docs/messages/CUST_SVC_API_000"
+        },
+        "context": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string",
+                "default": "optional_name"
+              },
+              "value": {
+                "type": "string",
+                "default": "optional_value"
+              }
+            }
+          }
+        }
+      }
+    },
+    "createCustomerResponse": {
+      "type": "object",
+      "properties": {
+        "customrname": {
+          "type": "string",
+          "default": "newly created customer name"
+        },
+        "customerid": {
+          "type": "integer",
+          "default": 123
+        }
+      }
+    },
+    "GiveNewSchemaNameHere": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "integer",
+          "default": 500
+        },
+        "errorID": {
+          "type": "string",
+          "default": "6bd9c7af-edeb-4377-bdbe-6f5b3697c7ba"
+        },
+        "errorCode": {
+          "type": "string",
+          "default": "ORD_SVC_API_001"
+        },
+        "errorType": {
+          "type": "string",
+          "default": "TECHNICAL"
+        },
+        "more_info": {
+          "type": "string",
+          "default": "http://loalhost/docs/messages/ORD_SVC_API_001"
+        },
+        "context": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string",
+                "default": "optional_name"
+              },
+              "value": {
+                "type": "string",
+                "default": "optional_value"
+              }
+            }
+          }
+        }
+      }
+    },
+    "ListOfOrders": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "customerid": {
+            "type": "integer",
+            "default": 123
+          },
+          "orderid": {
+            "type": "integer",
+            "default": 1234
+          },
+          "OrderDate": {
+            "type": "string",
+            "format": "date",
+            "default": "2018-09-26"
+          },
+          "DeliveryDate": {
+            "type": "string",
+            "format": "date",
+            "default": "2018-10-24"
+          },
+          "ShipmentStatus": {
+            "type": "string",
+            "default": "Shipped"
+          }
+        }
+      }
+    },
+    "listofcustomers": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "customerid": {
+            "type": "integer",
+            "default": 123
+          },
+          "Name": {
+            "type": "string",
+            "default": "Moonlit Semiconductors"
+          },
+          "Address": {
+            "type": "string",
+            "default": "3 Silicone alley, Palo Alto CA 94034"
+          },
+          "Phone": {
+            "type": "string",
+            "default": "(949)202-8025"
+          }
+        }
+      }
+    }
+  }
+}
