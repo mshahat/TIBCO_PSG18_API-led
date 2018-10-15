@@ -6,8 +6,8 @@ As part of this breakout, some exercises are planned, this guide is to help sett
 The following labs are planned, click on each for more details
 
  * Events Processing Lab1
- * APIs Lab 1
- * APIs Lab 2
+ * [API-led Lab 1](https://github.com/mshahat/TIBCO_PSG18_API-led/tree/master/labs/lab1)
+ * API-led Lab 2
 
 ## Prerequisites
 
