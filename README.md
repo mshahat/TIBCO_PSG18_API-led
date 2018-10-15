@@ -2,6 +2,13 @@
 
 As part of this breakout, some exercises are planned, this guide is to help setting up the environment.
 
+## Labs
+The following labs are planned, click on each for more details
+
+ * Events Processing Lab1
+ * APIs Lab 1
+ * APIs Lab 2
+
 ## Prerequisites
 
 Software you need to install and accounts you need to have to be able to carry on the labs during the workshops.
