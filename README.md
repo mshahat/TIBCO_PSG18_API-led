@@ -42,14 +42,14 @@ Instructions for using a package manager is included.
 * Windows 10, https://chocolatey.org/  use Powershell
 
 ### Required software
-* Text editor e.g. Microsoft VSCode https://code.visualstudio.com/
-* Virtualbox > 5.2.18 , to run a vm for the Events Processing lab https://www.virtualbox.org/
-* An HTTP client, to test APIs
+1. Text editor e.g. Microsoft VSCode https://code.visualstudio.com/
+2. Virtualbox > 5.2.18 , to run a vm for the Events Processing lab https://www.virtualbox.org/
+3. An HTTP client, to test APIs
   * Postman - GUI (free)      https://www.getpostman.com/
   * Httpie - CLI  (free)      https://httpie.org/
   * Paw Cloud     (for a fee) https://paw.cloud/
 
-### Text Editor 
+### I. Text Editor 
 Feel free to use the text editor of choise. 
 
 _macOS_
@@ -61,7 +61,7 @@ _Windows 10_
 C:\> choco install vscode
 ```
 
-### Virtualbox 
+### II. Virtualbox 
 For those using vmware fusion or workstation, you could try to import the vm without the need for virtualbox 
 
 _macOS_
@@ -73,7 +73,7 @@ _Windows 10_
 C:\> choco install virtualbox
 ```
 
-### Http client
+### III. Http client
 
 #### Postman 
 _macOS_
