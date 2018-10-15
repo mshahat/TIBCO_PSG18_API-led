@@ -30,7 +30,12 @@ These accounts are needed to run through the labs:
   * TIBCO Cloud Integration
 
 ## Software
+Please choose to download and install each requirement. 
+Instructions for using a package manager is included. 
+* macOS, https://brew.sh/
+* Windows 10, https://chocolatey.org/
 
+### Required software
 * Text editor e.g. Microsoft VSCode https://code.visualstudio.com/
 * Virtualbox > 5.2.18 , to run a vm for the Events Processing lab https://www.virtualbox.org/
 * An HTTP client, to test APIs
@@ -41,6 +46,12 @@ These accounts are needed to run through the labs:
 ### Text Editor 
 Feel free to use the text editor of choise. 
 
+macOS
+
+```
+```
+
+Windows 10
 
 items
 
