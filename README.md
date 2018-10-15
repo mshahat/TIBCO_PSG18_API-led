@@ -24,10 +24,16 @@ You should be able to run the labs if you are running on the following OS choice
 ## Accounts
 
 These accounts are needed to run through the labs:
-
 * TIBCO Cloud
   * TIBCO Cloud Mashery
   * TIBCO Cloud Integration
+
+Expected to use the following capabilities 
+* TIBCO Cloud Mashery Control Center
+* TIBCO Cloud Mashery API Modeling
+* TIBCO Cloud Integration, BW
+* TIBCO Cloud Integration, Mock up
+
 
 ## Software
 Please choose to download and install each requirement. 
@@ -50,9 +56,10 @@ _macOS_
 ```
 brew cask install visual-studio-code
 ```
+_Windows 10_
+```
 
-Windows 10
-
+```
 
 ### Virtualbox 
 
@@ -60,9 +67,10 @@ _macOS_
 ```
 brew cask install virtualbox
 ```
+_Windows 10_
+```
 
-Windows 10 
-
+```
 
 ### Http client
 
@@ -71,11 +79,19 @@ _macOS_
 ```
 brew cask install postman
 ```
+_Windows 10_
+```
+
+```
 
 #### Httpie
 _macOS_
 ```
 brew install httpie
+```
+_Windows 10_
+```
+
 ```
 
 
@@ -100,29 +116,3 @@ instructions for both Windows 10 and macOS
 
 virtualbox, vmware station or vmware fusion
 instructions for virtualbox 
-
-Windows 10
-
-macOS 
-
-text editor of choice 
-the instructor will be using Microsoft vscode 
-
-Windows 10 
-
-macOS
-
-http client 
-several options
-curl - if you have good experience with 
-httpie - terminal friendly
-postman - most common
-Paw cloud 
-
-postman install instructions 
-
-Windows 10 
-
-macOS 
-
-
