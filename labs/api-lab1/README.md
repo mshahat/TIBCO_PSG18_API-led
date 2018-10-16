@@ -1,4 +1,4 @@
-# API Platform & API-led Integration
+# API Platform & API-led Integration Lab 1
 
 Lab 1 artefacts could be found here
 
