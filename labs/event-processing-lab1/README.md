@@ -12,3 +12,15 @@ Go to
 cd /opt/tibco/cep/be/5.5/studio/eclipse
 ./studio &
 ```
+
+run Kafka instructions 
+
+
+
+create kafka topics instructions 
+
+
+download lab code 
+```shell
+git clone --> 
+```
