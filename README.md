@@ -29,6 +29,7 @@ These accounts are needed to run through the labs:
   * TIBCO Cloud Mashery
   * TIBCO Cloud Integration
 * Invitations to TIBCO Cloud to be received directly over @tibco.com emails
+* Sign into https://cloud.tibco.com/ , choose the _PSG Event 2018 API-led_ organisation
 
 Expected to use the following capabilities 
 * TIBCO Cloud Mashery Control Center
