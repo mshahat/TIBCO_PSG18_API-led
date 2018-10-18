@@ -1,0 +1,83 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "version" : "1.0",
+    "title" : "Summary about the new REST service.",
+    "description" : "Summary about the new REST service."
+  },
+  "host" : "localhost:8080",
+  "basePath" : "/",
+  "schemes" : [ "http" ],
+  "paths" : {
+    "/books" : {
+      "post" : {
+        "summary" : "",
+        "description" : "",
+        "operationId" : "post-books",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "body",
+          "in" : "body",
+          "description" : "",
+          "schema" : {
+            "$ref" : "#/definitions/Books"
+          },
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "a string to be returned",
+            "schema" : {
+              "type" : "string"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "Book" : {
+      "type" : "object",
+      "properties" : {
+        "isbn" : {
+          "type" : "string"
+        },
+        "name" : {
+          "type" : "string"
+        },
+        "description" : {
+          "type" : "string"
+        },
+        "authorName" : {
+          "type" : "string"
+        },
+        "releaseDate" : {
+          "type" : "string",
+          "format" : "date"
+        },
+        "vintage" : {
+          "type" : "boolean"
+        },
+        "signed" : {
+          "type" : "boolean"
+        },
+        "price" : {
+          "type" : "number"
+        }
+      }
+    },
+    "Books" : {
+      "type" : "object",
+      "properties" : {
+        "Book" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Book",
+            "uniqueItems" : false
+          }
+        }
+      }
+    }
+  }
+}

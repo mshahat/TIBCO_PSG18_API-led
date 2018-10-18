@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sca:composite xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:BW="http://xsd.tns.tibco.com/amf/models/sca/implementationtype/BW" xmlns:XMLSchema="http://www.w3.org/2001/XMLSchema" xmlns:compositeext="http://schemas.tibco.com/amx/3.0/compositeext" xmlns:rest="http://xsd.tns.tibco.com/bw/models/binding/rest" xmlns:sca="http://www.osoa.org/xmlns/sca/1.0" xmlns:scact="http://xsd.tns.tibco.com/amf/models/sca/componentType" xmlns:scaext="http://xsd.tns.tibco.com/amf/models/sca/extensions" xmi:id="_h49z4LVAEeiIH7Z4ifYQ5w" targetNamespace="http://tns.tibco.com/bw/composite/tibco.bw.postBooks.svc" name="tibco.bw.postBooks.svc" compositeext:version="1.0.0" compositeext:formatVersion="2">
+  <sca:service xmi:id="_paGpANDqEeixnP4SKKILgg" name="books" promote="ComponentpostBooks/books">
+    <sca:interface.wsdl xmi:id="_paK6cNDqEeixnP4SKKILgg" interface="http://xmlns.example.com/20181015192345PLT#wsdl.interface(books)" scaext:wsdlLocation="../Processes/tibco/bw/postbooks/svc/postBooks.bwp"/>
+    <scaext:binding xsi:type="rest:RestServiceBinding" xmi:id="_paN9wNDqEeixnP4SKKILgg" name="RestService" path="/books" docBasePath="http://localhost:7777/tibco.bw.postBooks.svc" docResourcePath="Resource" basePath="/" connector="tibco.bw.postbooks.svc.HTTPConnectorResource" structuredData="true" technologyVersion="2.0" implementation="Service Descriptors/tibco.bw.postbooks.svc.postBooks-Resource.json">
+      <operation xmi:id="_paOk0NDqEeixnP4SKKILgg" operationName="post" nickname="post-books" httpMethod="POST" responseStyle="element" requestStyle="element">
+        <clientFormat>json</clientFormat>
+        <clientRequestFormat>json</clientRequestFormat>
+      </operation>
+      <parameters xmi:id="_paTdUNDqEeixnP4SKKILgg"/>
+      <advancedConfig xmi:id="_paN9wdDqEeixnP4SKKILgg" blockingQueueSize="2147483647"/>
+    </scaext:binding>
+    <scact:bindingAdjunct xmi:id="_paOk0dDqEeixnP4SKKILgg" bindingName="RestService"/>
+  </sca:service>
+  <sca:property xmi:id="_iARVwLVAEeiIH7Z4ifYQ5w" name="BW.APPNODE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_iAVAILVAEeiIH7Z4ifYQ5w" name="BW.DEPLOYMENTUNIT.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_iAW1ULVAEeiIH7Z4ifYQ5w" name="BW.HOST.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_iAZ4oLVAEeiIH7Z4ifYQ5w" name="BW.DEPLOYMENTUNIT.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_iAbt0LVAEeiIH7Z4ifYQ5w" name="BW.MODULE.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_iAeKELVAEeiIH7Z4ifYQ5w" name="BW.MODULE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_TauEMLWZEei1ss_q3J3lVA" name="BW.CLOUD.PORT" type="XMLSchema:int" scalable="true"/>
+  <sca:component xmi:id="_gfO_wNDqEeixnP4SKKILgg" name="ComponentpostBooks" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_gfO_wdDqEeixnP4SKKILgg" processName="tibco.bw.postbooks.svc.postBooks"/>
+    <sca:service xmi:id="_paDlsNDqEeixnP4SKKILgg" name="books">
+      <sca:interface.wsdl xmi:id="_paEMwNDqEeixnP4SKKILgg" interface="http://xmlns.example.com/20181015192345PLT#wsdl.interface(books)" scaext:wsdlLocation="../Processes/tibco/bw/postbooks/svc/postBooks.bwp"/>
+    </sca:service>
+  </sca:component>
+</sca:composite>

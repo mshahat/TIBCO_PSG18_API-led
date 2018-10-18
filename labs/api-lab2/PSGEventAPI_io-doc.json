@@ -1,0 +1,59 @@
+{
+    "name": "PSGEventAPI",
+    "title": "PSGEventAPI",
+    "description": "",
+    "version": "7",
+    "protocol": "rest",
+    "basePath": "https://eval475310.api.mashery.com",
+    "auth": {
+        "key": {
+            "param": "api_key",
+            "location": "query"
+        }
+    },
+    "resources": {
+        "getBooks": {
+            "methods": {
+                "exampleMethod": {
+                    "description": "",
+                    "httpMethod": "GET",
+                    "path": "/books/:bookid",
+                    "parameters": {
+                        ":bookid": {
+                            "description": "The book id to be lookup up",
+                            "type": "string",
+                            "default": "123",
+                            "required": true,
+                            "location": "pathReplace"
+                        }
+                    }
+                }
+            }
+        },
+        "postBooks": {
+            "methods": {
+                "exampleMethod": {
+                    "description": "",
+                    "httpMethod": "POST",
+                    "path": "/books",
+                    "parameters": {
+                        "books": {
+                            "description": "Books to be added to collection",
+                            "default": "{\"Book\": [    {\"isbn\": \"string\",\"name\": \"string\",\"description\": \"string\",\"authorName\": \"string\",\"releaseDate\": \"2018-10-17\",\"vintage\": true,\"signed\": true,\"price\": 0 }  ] }",
+                            "required": true,
+                            "type": "textarea",
+                            "location": "body"
+                        },
+                        "Content-Type": {
+                            "type": "string",
+                            "required": "true",
+                            "description": "Content type of the payload",
+                            "default": "application/json",
+                            "location": "header"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

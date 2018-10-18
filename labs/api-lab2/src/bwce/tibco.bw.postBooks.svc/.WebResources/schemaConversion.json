@@ -1,0 +1,12 @@
+{"records": [
+    {
+        "jsonSchemaLocation": "/tibco.bw.postBooks.svc/Service Descriptors/tibco.bw.postbooks.svc.postBooks-books.json",
+        "conversionType": "linked",
+        "xsdSchemaTargetNamespace": "http://www.example.org/Books"
+    },
+    {
+        "jsonSchemaLocation": "/tibco.bw.postBooks.svc/Service Descriptors/tibco.bw.postbooks.svc.postBooks-Resource.json",
+        "conversionType": "linked",
+        "xsdSchemaTargetNamespace": "http://www.example.org/Books"
+    }
+]}

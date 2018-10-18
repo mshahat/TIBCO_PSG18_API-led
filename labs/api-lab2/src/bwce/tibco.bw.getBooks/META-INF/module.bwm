@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sca:composite xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:BW="http://xsd.tns.tibco.com/amf/models/sca/implementationtype/BW" xmlns:XMLSchema="http://www.w3.org/2001/XMLSchema" xmlns:compositeext="http://schemas.tibco.com/amx/3.0/compositeext" xmlns:rest="http://xsd.tns.tibco.com/bw/models/binding/rest" xmlns:sca="http://www.osoa.org/xmlns/sca/1.0" xmlns:scact="http://xsd.tns.tibco.com/amf/models/sca/componentType" xmlns:scaext="http://xsd.tns.tibco.com/amf/models/sca/extensions" xmi:id="_I-8IwNDrEeixnP4SKKILgg" targetNamespace="http://tns.tibco.com/bw/composite/tibco.bw.getBooks" name="tibco.bw.getBooks" compositeext:version="1.0.0" compositeext:formatVersion="2">
+  <sca:service xmi:id="_2AhhgtDrEeixnP4SKKILgg" name="books" promote="ComponentProcess/books">
+    <sca:interface.wsdl xmi:id="_2AiIk9DrEeixnP4SKKILgg" interface="http://xmlns.example.com/20181015192817PLT#wsdl.interface(books)" scaext:wsdlLocation="../Processes/tibco/bw/getbooks/Process.bwp"/>
+    <scaext:binding xsi:type="rest:RestServiceBinding" xmi:id="_2AivoNDrEeixnP4SKKILgg" name="RestService" path="/books/{bookid}" docBasePath="http://localhost:7777/tibco.bw.getBooks" docResourcePath="Resource" basePath="/" connector="tibco.bw.getbooks.Resource" structuredData="true" technologyVersion="2.0" implementation="Service Descriptors/tibco.bw.getbooks.Process-Resource.json">
+      <operation xmi:id="_2AjWsNDrEeixnP4SKKILgg" operationName="get" nickname="get-books" httpMethod="GET" responseStyle="element">
+        <clientFormat>json</clientFormat>
+        <clientRequestFormat>json</clientRequestFormat>
+      </operation>
+      <parameters xmi:id="_2ArSgNDrEeixnP4SKKILgg">
+        <parameterMapping xmi:id="_2ArSgdDrEeixnP4SKKILgg" parameterName="bookid" parameterType="Path" required="true"/>
+      </parameters>
+      <advancedConfig xmi:id="_2AivodDrEeixnP4SKKILgg" blockingQueueSize="2147483647"/>
+    </scaext:binding>
+    <scact:bindingAdjunct xmi:id="_2AjWsdDrEeixnP4SKKILgg" bindingName="RestService"/>
+  </sca:service>
+  <sca:property xmi:id="_JmeC0NDrEeixnP4SKKILgg" name="BW.APPNODE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_JmnMwNDrEeixnP4SKKILgg" name="BW.DEPLOYMENTUNIT.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_JmtTYNDrEeixnP4SKKILgg" name="BW.HOST.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_JmzaANDrEeixnP4SKKILgg" name="BW.DEPLOYMENTUNIT.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_Jm45kNDrEeixnP4SKKILgg" name="BW.MODULE.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_Jm9yENDrEeixnP4SKKILgg" name="BW.CLOUD.PORT" type="XMLSchema:int" scalable="true"/>
+  <sca:property xmi:id="_JnD4sNDrEeixnP4SKKILgg" name="BW.MODULE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:component xmi:id="_JDNkwNDrEeixnP4SKKILgg" name="ComponentProcess" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_JDNkwdDrEeixnP4SKKILgg" processName="tibco.bw.getbooks.Process"/>
+    <sca:service xmi:id="_2AhhgNDrEeixnP4SKKILgg" name="books">
+      <sca:interface.wsdl xmi:id="_2AhhgdDrEeixnP4SKKILgg" interface="http://xmlns.example.com/20181015192817PLT#wsdl.interface(books)" scaext:wsdlLocation="../Processes/tibco/bw/getbooks/Process.bwp"/>
+    </sca:service>
+  </sca:component>
+</sca:composite>

@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Tibco Bw GetBooks Module
+Bundle-SymbolicName: tibco.bw.getBooks
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: TIBCO Software Inc.
+TIBCO-BW-ModuleSharedVariables: META-INF/module.msv
+Require-Capability: com.tibco.bw.model; filter:="(name=bwext)",com.tibco.bw.palette; filter:="(name=bw.generalactivities)",com.tibco.bw.sharedresource.model; filter:="(name=bw.httpconnector)",com.tibco.bw.binding.model; filter:="(name=bw.rest)"
+TIBCO-BW-Edition: bwcloud
+TIBCO-BW-ConfigProfile: META-INF/default.substvar
+TIBCO-BW-ApplicationModule: META-INF/module.bwm
+TIBCO-BW-JobSharedVariables: META-INF/module.jsv
+TIBCO-BW-Version: 2.4.0 V63 2018-08-08

@@ -1,0 +1,5 @@
+{"records": [{
+    "jsonSchemaLocation": "/tibco.bw.getBooks/Service Descriptors/tibco.bw.getbooks.Process-Resource.json",
+    "conversionType": "linked",
+    "xsdSchemaTargetNamespace": "http://www.example.org/Books"
+}]}
