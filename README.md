@@ -8,7 +8,7 @@ The following labs are planned, click on each for more details
  * [Events Processing Lab 1](https://github.com/mshahat/TIBCO_PSG18_API-led/tree/master/labs/event-processing-lab1)
  * Events Processing Lab 2
  * [API-led Lab 1](https://github.com/mshahat/TIBCO_PSG18_API-led/tree/master/labs/api-lab1)
- * API-led Lab 2
+ * [API-led Lab 2](https://github.com/mshahat/TIBCO_PSG18_API-led/tree/master/labs/api-lab2)
 
 ## Prerequisites
 
