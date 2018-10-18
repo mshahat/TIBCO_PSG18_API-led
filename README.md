@@ -37,6 +37,17 @@ Expected to use the following capabilities
 * TIBCO Cloud Integration, BW
 * TIBCO Cloud Integration, Mock up
 
+## Download vm
+Download an Ubuntu linux vm for the EventProcessing Labs [HERE](https://drive.google.com/open?id=1guqTkECGv5FU5wUCEzGSX6KOq0OJDgpu)
+
+* You will need to be signed in using TIBCO Google Account
+* The vm is split into 8 parts .001 to .008
+* Unarchive to a folder of choice
+* The vm by default is allocated 1 vCPU and 4GB RAM
+* Run the VM using Virtualbox ( instructions to install below )
+* Use `sudo` for privilegded actions
+* Use user `tibco` with `tibco123` to login
+
 
 ## Software
 Please choose to download and install each requirement. 
