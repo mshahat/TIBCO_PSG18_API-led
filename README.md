@@ -55,6 +55,10 @@ Download an Ubuntu linux vm for the EventProcessing Labs [HERE](https://drive.go
 2. download & install the following software on your laptop 
 * TIBCO BusinessEvents Enterprise Edition 5.5
 * [Apache kafka_2.11-1.0.2](https://archive.apache.org/dist/kafka/1.0.2/kafka_2.11-1.0.2.tgz)
+* if you choose to install the software on your machine, we suggest you use the following path if you're on Linux or macOS
+`/opt/tibco/cep/be/5.5`
+`/opt/kafka_2.11-1.0.2`
+`/opt/projects`
 
 
 ## Software for API-led labs 
