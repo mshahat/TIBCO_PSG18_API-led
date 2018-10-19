@@ -42,7 +42,7 @@ Download an Ubuntu linux vm for the EventProcessing Labs [HERE](https://drive.go
 
 * You will need to be signed in using TIBCO Google Account
 * The vm is split into 8 parts .001 to .008
-* Unarchive to a folder of choice
+* Unarchive to a folder of choice using ["7zip"](https://www.7-zip.org/) on Windows or ["Keka"](https://www.keka.io/en/) on macOS 
 * The vm by default is allocated 1 vCPU and 4GB RAM
 * Run the VM using Virtualbox ( instructions to install below )
 * Use `sudo` for privilegded actions
