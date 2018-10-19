@@ -38,7 +38,7 @@ Expected to use the following capabilities
 * TIBCO Cloud Integration, Mock up
 
 ## Software for Events Processing Labs
-Two options are possible 
+Choose one of two options to run the Events Processing labs
 
 1. An Ubuntu vm with software required ( recommended )
 Download an Ubuntu linux vm for the EventProcessing Labs [HERE](https://drive.google.com/open?id=1guqTkECGv5FU5wUCEzGSX6KOq0OJDgpu)
