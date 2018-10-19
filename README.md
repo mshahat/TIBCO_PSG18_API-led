@@ -38,7 +38,7 @@ Expected to use the following capabilities
 * TIBCO Cloud Integration, Mock up
 
 ## Download vm
-Download an Ubuntu linux vm for the EventProcessing Labs [HERE](https://drive.google.com/open?id=1guqTkECGv5FU5wUCEzGSX6KOq0OJDgpu)
+Download an Ubuntu linux vm for the EventProcessing Labs [HERE]
 
 * You will need to be signed in using TIBCO Google Account
 * The vm is split into 8 parts .001 to .008
