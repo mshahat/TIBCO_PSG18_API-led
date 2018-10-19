@@ -1,6 +1,6 @@
 # TIBCO PSG 2018 | API Platform &amp; API-led Integration
 
-As part of this breakout, some exercises are planned, this guide is to help setting up the environment and list labs and artefacts
+As part of this breakout, some exercises are planned, this guide is to help setting up the environment and list labs and artefacts.
 
 ### Please file github ISSUE for any questions 
 
@@ -13,11 +13,10 @@ The following labs are planned, click on each for more details
  * [API-led Lab 2](https://github.com/mshahat/TIBCO_PSG18_API-led/tree/master/labs/api-lab2)
 
 ## Prerequisites
-
 Software you need to install and accounts you need to have to be able to carry on the labs during the workshops.
 
 ## Operating System
-You should be able to run the labs if you are running on the following OS choices
+You should be able to run the labs on your OS of choice
 
 * macOS
 * Windows 10
@@ -25,7 +24,6 @@ You should be able to run the labs if you are running on the following OS choice
 * Linux e.g. CentOS or Ubuntu
 
 ## Accounts
-
 These accounts are needed to run through the labs:
 * TIBCO Cloud
   * TIBCO Cloud Mashery
@@ -39,7 +37,10 @@ Expected to use the following capabilities
 * TIBCO Cloud Integration, BW
 * TIBCO Cloud Integration, Mock up
 
-## Download vm
+## Software for Events Processing Labs
+Two options are possible 
+
+1. An Ubuntu vm with software required ( recommended )
 Download an Ubuntu linux vm for the EventProcessing Labs [uplooooadingg](uploooooooding)
 README available on desktop
 
@@ -51,14 +52,18 @@ README available on desktop
 * Use `sudo` for privilegded actions
 * Use user `tibco` with `tibco123` to login
 
+2. download & install the following software on your laptop 
+* TIBCO BusinessEvents Enterprise Edition 5.5
+* [Apache kafka_2.11-1.0.2](https://archive.apache.org/dist/kafka/1.0.2/kafka_2.11-1.0.2.tgz)
 
-## Software
+
+## Software for API-led labs 
 Please choose to download and install each requirement. 
 Instructions for using a package manager is included. 
 * macOS, https://brew.sh/
 * Windows 10, https://chocolatey.org/  use Powershell
 
-### Required software
+### software
 * Text editor e.g. Microsoft VSCode https://code.visualstudio.com/
 * Virtualbox > 5.2.18 , to run a vm for the Events Processing lab https://www.virtualbox.org/
 * An HTTP client, to test APIs
@@ -72,7 +77,7 @@ docker pull mysql
 ```
 
 ### I. Text Editor 
-Feel free to use the text editor of choise. 
+Feel free to use the text editor of choice. 
 
 _macOS_
 ```
@@ -123,11 +128,3 @@ https://store.docker.com/editions/community/docker-ce-desktop-mac
 _Windows 10_
 https://store.docker.com/editions/community/docker-ce-desktop-windows
 
-
-items
-
-labs 
-lab 1 instructions
-lab 1 artefacts
-lab 2 instructions
-lab 2 artefacts 
