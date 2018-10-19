@@ -39,6 +39,7 @@ Expected to use the following capabilities
 
 ## Download vm
 Download an Ubuntu linux vm for the EventProcessing Labs [HERE]
+README available on desktop
 
 * You will need to be signed in using TIBCO Google Account
 * The vm is split into 8 parts .001 to .008
