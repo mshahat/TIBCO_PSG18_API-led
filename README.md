@@ -2,7 +2,7 @@
 
 As part of this breakout, some exercises are planned, this guide is to help setting up the environment and list labs and artefacts
 
-## please file github ISSUE for any questions 
+### Please file github ISSUE for any questions 
 
 ## Labs
 The following labs are planned, click on each for more details
@@ -40,7 +40,7 @@ Expected to use the following capabilities
 * TIBCO Cloud Integration, Mock up
 
 ## Download vm
-Download an Ubuntu linux vm for the EventProcessing Labs [HERE](uploooooooding)
+Download an Ubuntu linux vm for the EventProcessing Labs [uplooooadingg](uploooooooding)
 README available on desktop
 
 * You will need to be signed in using TIBCO Google Account
