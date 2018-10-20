@@ -3,6 +3,7 @@
 As part of this breakout, some exercises are planned, this guide is to help setting up the environment and list labs and artefacts.
 
 ### Please file github ISSUE for any questions 
+### Download Google Chat https://get.google.com/chat/ , search and join _API track | Dublin PSG Event 2018_ room.
 
 ## Labs
 The following labs are planned, click on each for more details
