@@ -1,0 +1,18 @@
+/**
+ * @description 
+ */
+void rulefunction Rules.Auditor.CloseFiles {
+	attribute {
+		validity = ACTION;
+	}
+	scope {
+		
+	}
+	body {
+		// Close all audit log files before shutdown	
+		for (int i=1; i<=5; i++) {
+			String file = System.getGlobalVariableAsString("Auditor/OutputDir","C:/temp/") +"/Ship"+ i + ".records";
+			System.IO.fileClose(file);
+		}
+	}
+}

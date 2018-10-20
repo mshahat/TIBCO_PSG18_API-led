@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<event:TimeEvent xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:event="http:///com/tibco/cep/designtime/core/model/event" namespace="/Events/" folder="/Events/" name="DisruptorEviction" description="" GUID="019DA705-77BA-ECDB-47D0-3450F797DAE1" ownerProjectName="MarineTransportLogistics" type="TimeEvent" superEventPath=""/>

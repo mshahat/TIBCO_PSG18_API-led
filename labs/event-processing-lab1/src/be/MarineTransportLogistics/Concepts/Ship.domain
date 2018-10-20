@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dm:Domain xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dm="http:///com/tibco/cep/designtime/core/model/domain" namespace="/Concepts/" folder="/Concepts/" name="Ship" description="" GUID="C8144E9C-F360-E3AE-DCCF-6DEB651E6273" ownerProjectName="MarineTransportLogistics">
+  <entries xsi:type="dm:Single" description="" value="Ship1"/>
+  <entries xsi:type="dm:Single" description="" value="Ship2"/>
+  <entries xsi:type="dm:Single" description="" value="Ship3"/>
+</dm:Domain>

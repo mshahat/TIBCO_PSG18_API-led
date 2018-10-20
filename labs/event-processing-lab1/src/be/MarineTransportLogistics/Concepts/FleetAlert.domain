@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dm:Domain xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dm="http:///com/tibco/cep/designtime/core/model/domain" namespace="/Concepts/" folder="/Concepts/" name="FleetAlert" description="" GUID="55C52928-69CB-46CC-110D-F25239BB977D" ownerProjectName="MarineTransportLogistics">
+  <entries xsi:type="dm:Single" description="Crew on strike" value="Crew on strike"/>
+  <entries xsi:type="dm:Single" description="Pirate attack" value="Pirate attack"/>
+  <entries xsi:type="dm:Single" description="Weather alert" value="Weather alert"/>
+  <entries xsi:type="dm:Single" description="Refugees rescue" value="Refugees rescue"/>
+</dm:Domain>

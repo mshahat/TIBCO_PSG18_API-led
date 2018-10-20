@@ -1,0 +1,41 @@
+/**
+ * @description 
+ * @author sbagi-mbp2
+ */
+rule Rules.Fleet.GenerateFleetEvents {
+	attribute {
+		priority = 5;
+		forwardChain = true;
+	}
+	declare {
+		Events.TestTrigger t;
+	}
+	when {
+		
+	}
+	then {
+		try {
+			// Iterate through .eventtestdata file and send FleetUpdate events
+			String xml = "";
+			while(true) {
+				Engine.sleep(System.getGlobalVariableAsLong("Fleet/VoyageInterval",5000));
+				String filePath = System.getGlobalVariableAsString("Fleet/VoyageTestData","/tmp/filedoesnotexist");
+				String newxml = File.readFileAsString(filePath);
+				if (String.length(xml) != String.length(newxml)) {	
+					String voyageCount = XPath.execute("$var/count(/testdata/ns0:FleetUpdate/payload/ns1:Voyage)",newxml,"ns0=www.tibco.com/be/ontology/Events/FleetUpdate,ns1=www.tibco.com/be/ontology/Concepts/Voyage");
+					for (int i=1; i<=Number.doubleValue(voyageCount); i++) {
+						if ("true" == XPath.execute("$var/string(/testdata/ns0:FleetUpdate["+i+"]/@isSelected)",newxml,"ns0=www.tibco.com/be/ontology/Events/FleetUpdate,ns1=www.tibco.com/be/ontology/Concepts/Voyage")) {
+							String voyagePayload = XPath.execute("$var/testdata/ns0:FleetUpdate["+i+"]/payload/ns1:Voyage",newxml,"ns0=www.tibco.com/be/ontology/Events/FleetUpdate,ns1=www.tibco.com/be/ontology/Concepts/Voyage");
+							Event.sendEvent(Events.FleetUpdate.FleetUpdate(null, voyagePayload));
+							Engine.sleep(System.getGlobalVariableAsLong("Fleet/VoyageInterval",5000));
+						}
+					}
+				}	
+				xml = newxml;
+			}
+		}
+		catch(Exception e) {
+			;
+		}
+	}
+}

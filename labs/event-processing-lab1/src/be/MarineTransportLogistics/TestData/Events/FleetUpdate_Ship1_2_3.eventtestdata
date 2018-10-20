@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testdata name="Ship1Update" folder="TestData" project="MarineTransportLogistics" entityPath="/Events/FleetUpdate" type="SimpleEvent"><ns0:FleetUpdate xmlns:ns0="www.tibco.com/be/ontology/Events/FleetUpdate" isSelected="true"><payload><ns1:Voyage xmlns:ns1="www.tibco.com/be/ontology/Concepts/Voyage">
+    <ItineraryID>Route1</ItineraryID>
+    <Ship>Ship1</Ship>
+    <Shipment>Commodities</Shipment>
+    <CurrentLocation>At Departure</CurrentLocation>
+    <FromPort>Los Angeles</FromPort>
+    <ToPort>Tokyo</ToPort>
+    <LoadDelivered>false</LoadDelivered>
+    <EstimatedArrival>2018-09-09T00:00:00.00-00:00</EstimatedArrival>
+    <Departure>2018-09-04T00:00:00.00-00:00</Departure>
+</ns1:Voyage></payload></ns0:FleetUpdate><ns0:FleetUpdate xmlns:ns0="www.tibco.com/be/ontology/Events/FleetUpdate" isSelected="true"><payload><ns1:Voyage xmlns:ns1="www.tibco.com/be/ontology/Concepts/Voyage">
+    <ItineraryID>Route1</ItineraryID>
+    <Ship>Ship1</Ship>
+	<CurrentLocation>At Sea</CurrentLocation>
+</ns1:Voyage></payload></ns0:FleetUpdate><ns0:FleetUpdate xmlns:ns0="www.tibco.com/be/ontology/Events/FleetUpdate" isSelected="true"><payload><ns1:Voyage xmlns:ns1="www.tibco.com/be/ontology/Concepts/Voyage">
+    <ItineraryID>Route2</ItineraryID>
+    <Ship>Ship2</Ship>
+    <Shipment>Containers</Shipment>
+    <CurrentLocation>At Departure</CurrentLocation>
+    <FromPort>Colombo</FromPort>
+    <ToPort>Marseille</ToPort>
+    <LoadDelivered>false</LoadDelivered>
+    <EstimatedArrival>2018-09-10T00:00:00.00-00:00</EstimatedArrival>
+    <Departure>2018-09-05T00:00:00.00-00:00</Departure>
+</ns1:Voyage></payload></ns0:FleetUpdate><ns0:FleetUpdate xmlns:ns0="www.tibco.com/be/ontology/Events/FleetUpdate" isSelected="true"><payload><ns1:Voyage xmlns:ns1="www.tibco.com/be/ontology/Concepts/Voyage">
+    <ItineraryID>Route3</ItineraryID>
+    <Ship>Ship3</Ship>
+    <Shipment>Dry Bulk</Shipment>
+    <CurrentLocation>At Departure</CurrentLocation>
+    <FromPort>Dover</FromPort>
+    <ToPort>Montreal</ToPort>
+    <LoadDelivered>false</LoadDelivered>
+    <EstimatedArrival>2018-09-06T00:00:00.00-00:00</EstimatedArrival>
+    <Departure>2018-09-02T00:00:00.00-00:00</Departure>
+</ns1:Voyage></payload></ns0:FleetUpdate><ns0:FleetUpdate xmlns:ns0="www.tibco.com/be/ontology/Events/FleetUpdate" isSelected="true"><payload><ns1:Voyage xmlns:ns1="www.tibco.com/be/ontology/Concepts/Voyage">
+    <ItineraryID>Route1</ItineraryID>
+    <Ship>Ship1</Ship>
+    <CurrentLocation>Approaching Destination</CurrentLocation>
+</ns1:Voyage></payload></ns0:FleetUpdate><ns0:FleetUpdate xmlns:ns0="www.tibco.com/be/ontology/Events/FleetUpdate" isSelected="true"><payload><ns1:Voyage xmlns:ns1="www.tibco.com/be/ontology/Concepts/Voyage">
+    <ItineraryID>Route1</ItineraryID>
+    <Ship>Ship1</Ship>
+    <CurrentLocation>At Destination</CurrentLocation>
+    <LoadDelivered>true</LoadDelivered>
+    <ActualArrival>2018-09-10T00:00:00.00-00:00</ActualArrival>
+</ns1:Voyage></payload></ns0:FleetUpdate><ns0:FleetUpdate xmlns:ns0="www.tibco.com/be/ontology/Events/FleetUpdate" isSelected="true"><payload><ns1:Voyage xmlns:ns1="www.tibco.com/be/ontology/Concepts/Voyage">
+    <ItineraryID>Route2</ItineraryID>
+    <Ship>Ship2</Ship>
+    <CurrentLocation>At Sea</CurrentLocation>
+	<EstimatedArrival>2018-09-11T00:00:00.00-00:00</EstimatedArrival>
+	<DelayReason>Refugees Rescue</DelayReason>
+</ns1:Voyage></payload></ns0:FleetUpdate><ns0:FleetUpdate xmlns:ns0="www.tibco.com/be/ontology/Events/FleetUpdate" isSelected="true"><payload><ns1:Voyage xmlns:ns1="www.tibco.com/be/ontology/Concepts/Voyage">
+    <ItineraryID>Route3</ItineraryID>
+    <Ship>Ship3</Ship>
+    <CurrentLocation>At Sea</CurrentLocation>
+</ns1:Voyage></payload></ns0:FleetUpdate><ns0:FleetUpdate xmlns:ns0="www.tibco.com/be/ontology/Events/FleetUpdate" isSelected="true"><payload><ns1:Voyage xmlns:ns1="www.tibco.com/be/ontology/Concepts/Voyage">
+    <ItineraryID>Route2</ItineraryID>
+    <Ship>Ship2</Ship>
+    <CurrentLocation>Approaching Destination</CurrentLocation>
+</ns1:Voyage></payload></ns0:FleetUpdate><ns0:FleetUpdate xmlns:ns0="www.tibco.com/be/ontology/Events/FleetUpdate" isSelected="true"><payload><ns1:Voyage xmlns:ns1="www.tibco.com/be/ontology/Concepts/Voyage">
+    <ItineraryID>Route2</ItineraryID>
+    <Ship>Ship2</Ship>
+    <CurrentLocation>At Destination</CurrentLocation>
+    <LoadDelivered>true</LoadDelivered>
+    <ActualArrival>2018-09-11T00:00:00.00-00:00</ActualArrival>
+</ns1:Voyage></payload></ns0:FleetUpdate><ns0:FleetUpdate xmlns:ns0="www.tibco.com/be/ontology/Events/FleetUpdate" isSelected="true"><payload><ns1:Voyage xmlns:ns1="www.tibco.com/be/ontology/Concepts/Voyage">
+    <ItineraryID>Route3</ItineraryID>
+    <Ship>Ship3</Ship>
+    <CurrentLocation>Approaching Destination</CurrentLocation>
+</ns1:Voyage></payload></ns0:FleetUpdate></testdata>

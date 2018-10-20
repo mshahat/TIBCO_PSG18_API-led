@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dm:Domain xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dm="http:///com/tibco/cep/designtime/core/model/domain" namespace="/Concepts/" folder="/Concepts/" name="PortDisruptor" description="" GUID="05EADB84-9277-CF93-5C10-25338E1F2C5D" ownerProjectName="MarineTransportLogistics">
+  <entries xsi:type="dm:Single" description="Trade war" value="Trade war"/>
+  <entries xsi:type="dm:Single" description="Weather alert" value="Weather alert"/>
+  <entries xsi:type="dm:Single" description="Docker on strike" value="Docker on strike"/>
+  <entries xsi:type="dm:Single" description="Iceberg drifting" value="Iceberg drifting"/>
+</dm:Domain>

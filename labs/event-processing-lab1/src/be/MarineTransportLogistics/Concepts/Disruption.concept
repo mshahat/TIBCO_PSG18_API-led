@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<element:Concept xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:element="http:///com/tibco/cep/designtime/core/model/element" namespace="/Concepts/" folder="/Concepts/" name="Disruption" description="" GUID="EB3F68C0-37AC-AD2F-7A32-D23E49022A21" ownerProjectName="MarineTransportLogistics" superConceptPath="" autoStartStateMachine="true">
+  <extendedProperties/>
+  <properties name="Type" ownerProjectName="MarineTransportLogistics" conceptTypePath="/Concepts/PortDisruptor" ownerPath="/Concepts/Disruption">
+    <domainInstances resourcePath="/Concepts/PortDisruptor" ownerProperty="//@properties.0"/>
+  </properties>
+  <properties name="Description" ownerProjectName="MarineTransportLogistics" ownerPath="/Concepts/Disruption"/>
+  <properties name="Source" ownerProjectName="MarineTransportLogistics" conceptTypePath="/Concepts/Port" ownerPath="/Concepts/Disruption">
+    <domainInstances resourcePath="/Concepts/Port" ownerProperty="//@properties.2"/>
+  </properties>
+  <properties name="AlternativePort" ownerProjectName="MarineTransportLogistics" conceptTypePath="/Concepts/Port" ownerPath="/Concepts/Disruption">
+    <domainInstances resourcePath="/Concepts/Port" ownerProperty="//@properties.3"/>
+  </properties>
+</element:Concept>

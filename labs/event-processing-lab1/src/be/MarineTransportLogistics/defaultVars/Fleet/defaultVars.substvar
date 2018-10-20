@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<repository xmlns="http://www.tibco.com/xmlns/repo/types/2002">
+    <globalVariables>
+        <globalVariable>
+            <name>VoyageInterval</name>
+            <value>5000</value>
+            <type>Integer</type>
+            <deploymentSettable>true</deploymentSettable>
+            <serviceSettable>false</serviceSettable>
+            <description>Time in ms between 2 generated voyages</description>
+            <constraint/>
+            <modTime>1535147150394</modTime>
+        </globalVariable>
+        <globalVariable>
+            <name>VoyageTestData</name>
+            <value>/opt/projects/be/MarineTransportLogistics/TestData/Events/FleetUpdate_Ship1_2_3_4_5.eventtestdata</value>
+            <type>String</type>
+            <deploymentSettable>true</deploymentSettable>
+            <serviceSettable>false</serviceSettable>
+            <description/>
+            <constraint/>
+            <modTime>1539636678506</modTime>
+        </globalVariable>
+    </globalVariables>
+</repository>

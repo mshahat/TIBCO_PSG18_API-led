@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<event:SimpleEvent xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:event="http:///com/tibco/cep/designtime/core/model/event" namespace="/Events/" folder="/Events/" name="FleetUpdate" description="" GUID="E82F090C-0CBD-CEA1-9F96-2F958F7BAF6A" ownerProjectName="MarineTransportLogistics" superEventPath="" payloadString="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&#xA;&lt;payload ref=&quot;pfx2:Voyage&quot;/>" ttlUnits="Seconds" channelURI="/Channels/Kafka" destinationName="FleetUpdate">
+  <namespaceEntries prefix="xsd" namespace="http://www.w3.org/2001/XMLSchema"/>
+  <namespaceEntries prefix="pfx2" namespace="www.tibco.com/be/ontology/Concepts/Voyage"/>
+  <registryImportEntries location="Concepts/Voyage.concept" namespace="www.tibco.com/be/ontology/Concepts/Voyage"/>
+  <expiryAction folder="/Events/FleetUpdate" name="RouteUpdate_expiryAction" ownerProjectName="MarineTransportLogistics" actionText="" conditionText="">
+    <symbols>
+      <symbolList idName="routeupdate" type="/Events/FleetUpdate"/>
+    </symbols>
+  </expiryAction>
+</event:SimpleEvent>

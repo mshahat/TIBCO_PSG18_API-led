@@ -1,0 +1,35 @@
+/**
+ * @description 
+ */
+void rulefunction Rules.CommandCenter.TriageDisruption {
+	attribute {
+		validity = ACTION;
+	}
+	scope {
+		Events.Disruption disruptEvent;
+	}
+	body {
+		String disruptID = "ID_"+disruptEvent.Source+"_"+disruptEvent.EventType;
+		Concepts.Disruption disruptor;
+		// If disruption does not exist, create it
+		// else ignore this event
+		if (Instance.getByExtIdByUri(disruptID, "/Concepts/Disruption") == null) { 
+			disruptor = Concepts.Disruption.Disruption(
+							disruptID,
+							disruptEvent.EventType,
+							disruptEvent.EventDescription,
+							disruptEvent.Source,
+							disruptEvent.AlternativePort);
+			System.debugOut("***** Disruption created : " + disruptID);
+			System.debugOut(Instance.serializeUsingDefaults(disruptor));
+			
+			// Schedule this event that will cancel the disruption after some time (default 90000)
+			Events.DisruptorEviction.scheduleDisruptorEviction(System.getGlobalVariableAsLong("PortAuthorities/DisruptionTTL",90000), disruptID, 0);
+		}
+		
+		// We don't need this event anymore
+		Event.consumeEvent(disruptEvent);
+		
+	}
+	
+}

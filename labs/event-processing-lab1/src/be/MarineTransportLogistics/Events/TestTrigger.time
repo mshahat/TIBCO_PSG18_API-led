@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<event:TimeEvent xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:event="http:///com/tibco/cep/designtime/core/model/event" namespace="/Events/" folder="/Events/" name="TestTrigger" description="" GUID="08B9DFB0-5F33-21B0-0A68-3AF41F96319B" ownerProjectName="MarineTransportLogistics" type="TimeEvent" superEventPath="" scheduleType="repeat" timeEventCount="1" interval="1" intervalUnit="Days"/>

@@ -1,0 +1,21 @@
+/**
+ * @description 
+ */
+void rulefunction Rules.CommandCenter.RecordEventToAuditLog {
+	attribute {
+		validity = ACTION;
+	}
+	scope {
+		Concepts.Voyage v;
+	}
+	body {
+		// Each vessel event is put in an audit log
+		// So that auditor can retrieve later
+		Events.FleetUpdate evtToRecord = Event.createEvent("xslt://{{/Events/FleetUpdate}}<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<xsl:stylesheet xmlns:xsl=\"http://www.w3.org/1999/XSL/Transform\" xmlns:tns=\"www.tibco.com/be/ontology/Concepts/Voyage\" version=\"2.0\"><xsl:param name=\"v\"/><xsl:template name=\"Function\" match=\"/\"><createEvent><event><payload><tns:Voyage><xsl:if test=\"$v/@extId\"><xsl:attribute name=\"extId\"><xsl:value-of select=\"$v/@extId\"/></xsl:attribute></xsl:if><xsl:if test=\"$v/@Id\"><xsl:attribute name=\"Id\"><xsl:value-of select=\"$v/@Id\"/></xsl:attribute></xsl:if><xsl:if test=\"$v/Ship\"><Ship><xsl:value-of select=\"$v/Ship\"/></Ship></xsl:if><xsl:if test=\"$v/Shipment\"><Shipment><xsl:value-of select=\"$v/Shipment\"/></Shipment></xsl:if><xsl:if test=\"$v/CurrentLocation\"><CurrentLocation><xsl:value-of select=\"$v/CurrentLocation\"/></CurrentLocation></xsl:if><xsl:if test=\"$v/Departure\"><Departure><xsl:value-of select=\"$v/Departure\"/></Departure></xsl:if><xsl:if test=\"$v/ActualArrival\"><ActualArrival><xsl:value-of select=\"$v/ActualArrival\"/></ActualArrival></xsl:if><xsl:if test=\"$v/FromPort\"><FromPort><xsl:value-of select=\"$v/FromPort\"/></FromPort></xsl:if><xsl:if test=\"$v/ToPort\"><ToPort><xsl:value-of select=\"$v/ToPort\"/></ToPort></xsl:if><xsl:if test=\"$v/EstimatedArrival\"><EstimatedArrival><xsl:value-of select=\"$v/EstimatedArrival\"/></EstimatedArrival></xsl:if><xsl:if test=\"$v/LoadDelivered\"><LoadDelivered><xsl:value-of select=\"$v/LoadDelivered\"/></LoadDelivered></xsl:if><xsl:if test=\"$v/ItineraryID\"><ItineraryID><xsl:value-of select=\"$v/ItineraryID\"/></ItineraryID></xsl:if><xsl:if test=\"$v/DelayReason\"><DelayReason><xsl:value-of select=\"$v/DelayReason\"/></DelayReason></xsl:if></tns:Voyage></payload></event></createEvent></xsl:template></xsl:stylesheet>");
+		// Event.assertEvent(evtToRecord); // Note : Do NOT assert this event
+		if (Event.routeTo(evtToRecord, "/Channels/Kafka/FleetAudit", null) != null)
+			System.debugOut("***** Fleet update routed to audit logs : " + v@extId);
+		else
+			Exception.newException("EventNotSentException", v@extId + " update not recorded", null);
+	}
+}

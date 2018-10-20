@@ -1,0 +1,46 @@
+/**
+ * @description 
+ * @author sbagi-mbp2
+ */
+rule Rules.PortAuthorities.GeneratePortEvents {
+	attribute {
+		priority = 5;
+		forwardChain = true;
+	}
+	declare {
+		Events.TestTrigger t;
+	}
+	when {
+		
+	}
+	then {
+		try {
+			// Iterate through .eventtestdata file and send port disruptions
+			String xml = "";
+			while(true) {
+				Engine.sleep(System.getGlobalVariableAsLong("PortAuthorities/VoyageInterval",5000));
+				String filePath = System.getGlobalVariableAsString("PortAuthorities/DisruptionTestData","/tmp/filedoesnotexist");
+				String newxml = File.readFileAsString(filePath);
+				if (String.length(xml) != String.length(newxml)) {	
+					String disruptCount = XPath.execute("$var/count(/testdata/ns0:Disruption)",newxml,"ns0=www.tibco.com/be/ontology/Events/Disruption");
+					for (int i=1; i<=Number.doubleValue(disruptCount); i++) {
+						if ("true" == XPath.execute("$var/string(/testdata/ns0:Disruption["+i+"]/@isSelected)",newxml,"ns0=www.tibco.com/be/ontology/Events/Disruption")) {
+							String desc = XPath.execute("$var/testdata/ns0:Disruption["+i+"]/EventDescription/text()",newxml,"ns0=www.tibco.com/be/ontology/Events/Disruption");
+							String type = XPath.execute("$var/testdata/ns0:Disruption["+i+"]/EventType/text()",newxml,"ns0=www.tibco.com/be/ontology/Events/Disruption");
+							String altPort = XPath.execute("$var/testdata/ns0:Disruption["+i+"]/AlternativePort/text()",newxml,"ns0=www.tibco.com/be/ontology/Events/Disruption");
+							String srcPort = XPath.execute("$var/testdata/ns0:Disruption["+i+"]/Source/text()",newxml,"ns0=www.tibco.com/be/ontology/Events/Disruption");
+							if (desc == null) desc = "";
+							if (altPort == null) altPort = "";
+							Event.sendEvent(Events.Disruption.Disruption(null,null,desc,type,altPort,srcPort));
+							Engine.sleep(System.getGlobalVariableAsLong("PortAuthorities/DisruptionInterval",5000));
+						}
+					}
+				}
+				xml = newxml;
+			}
+		}
+		catch(Exception e) {
+			;
+		}
+	}
+}

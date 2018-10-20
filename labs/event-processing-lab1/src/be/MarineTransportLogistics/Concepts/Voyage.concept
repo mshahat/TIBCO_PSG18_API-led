@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<element:Concept xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:element="http:///com/tibco/cep/designtime/core/model/element" namespace="/Concepts/" folder="/Concepts/" name="Voyage" description="" GUID="8F132443-DADC-0DC4-B628-764F1E5864C5" ownerProjectName="MarineTransportLogistics" superConceptPath="" autoStartStateMachine="true">
+  <extendedProperties/>
+  <properties name="Ship" ownerProjectName="MarineTransportLogistics" conceptTypePath="/Concepts/Ship" ownerPath="/Concepts/Voyage">
+    <domainInstances resourcePath="/Concepts/Ship" ownerProperty="//@properties.0"/>
+  </properties>
+  <properties name="Shipment" ownerProjectName="MarineTransportLogistics" conceptTypePath="/Concepts/Shipment" ownerPath="/Concepts/Voyage">
+    <domainInstances resourcePath="/Concepts/Shipment" ownerProperty="//@properties.1"/>
+  </properties>
+  <properties name="CurrentLocation" ownerProjectName="MarineTransportLogistics" conceptTypePath="/Concepts/Location" ownerPath="/Concepts/Voyage">
+    <domainInstances resourcePath="/Concepts/Location" ownerProperty="//@properties.2"/>
+  </properties>
+  <properties name="Departure" ownerProjectName="MarineTransportLogistics" type="DateTime" ownerPath="/Concepts/Voyage"/>
+  <properties name="ActualArrival" ownerProjectName="MarineTransportLogistics" type="DateTime" ownerPath="/Concepts/Voyage"/>
+  <properties name="FromPort" ownerProjectName="MarineTransportLogistics" conceptTypePath="/Concepts/Port" ownerPath="/Concepts/Voyage">
+    <domainInstances resourcePath="/Concepts/Port" ownerProperty="//@properties.5"/>
+  </properties>
+  <properties name="ToPort" ownerProjectName="MarineTransportLogistics" conceptTypePath="/Concepts/Port" ownerPath="/Concepts/Voyage">
+    <domainInstances resourcePath="/Concepts/Port" ownerProperty="//@properties.6"/>
+  </properties>
+  <properties name="EstimatedArrival" ownerProjectName="MarineTransportLogistics" type="DateTime" ownerPath="/Concepts/Voyage"/>
+  <properties name="LoadDelivered" ownerProjectName="MarineTransportLogistics" type="boolean" ownerPath="/Concepts/Voyage"/>
+  <properties name="ItineraryID" ownerProjectName="MarineTransportLogistics" ownerPath="/Concepts/Voyage"/>
+  <properties name="DelayReason" ownerProjectName="MarineTransportLogistics" conceptTypePath="/Concepts/Delay" ownerPath="/Concepts/Voyage">
+    <domainInstances resourcePath="/Concepts/FleetAlert" ownerProperty="//@properties.10"/>
+  </properties>
+</element:Concept>

@@ -1,0 +1,17 @@
+/**
+ * @description 
+ */
+String rulefunction Rules.Auditor.KafkaMessageKeySelector {
+	attribute {
+		validity = ACTION;
+	}
+	scope {
+		Events.FleetUpdate evt;
+	}
+	body {
+		// Return the Ship name
+		// Each ship has its own Kafka partition
+		String partitionKey = XPath.evalAsString("xpath://<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<xpath>\n    <expr>$evt/payload/tns:Voyage/Ship</expr>\n    <namespaces>\n        <namespace URI=\"http://www.w3.org/2001/XMLSchema\" pfx=\"xsd\"/>\n        <namespace URI=\"www.tibco.com/be/ontology/Concepts/Voyage\" pfx=\"tns\"/>\n    </namespaces>\n    <variables>\n        <variable>evt</variable>\n    </variables>\n</xpath>");
+		return partitionKey;
+	}
+}

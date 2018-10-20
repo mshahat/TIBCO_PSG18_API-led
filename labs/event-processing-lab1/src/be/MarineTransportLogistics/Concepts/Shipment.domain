@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dm:Domain xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dm="http:///com/tibco/cep/designtime/core/model/domain" namespace="/Concepts/" folder="/Concepts/" name="Shipment" description="" GUID="AF56F881-5D50-E41C-0916-AFC3E066E851" ownerProjectName="MarineTransportLogistics">
+  <entries xsi:type="dm:Single" description="" value="Dry Bulk"/>
+  <entries xsi:type="dm:Single" description="" value="Containers"/>
+  <entries xsi:type="dm:Single" description="" value="Commodities"/>
+  <entries xsi:type="dm:Single" description="" value="Cable Layer"/>
+  <entries xsi:type="dm:Single" description="" value="Passengers"/>
+  <entries xsi:type="dm:Single" description="" value="Liquid Bulk"/>
+</dm:Domain>

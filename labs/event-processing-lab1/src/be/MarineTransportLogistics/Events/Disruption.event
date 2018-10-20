@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<event:SimpleEvent xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:event="http:///com/tibco/cep/designtime/core/model/event" namespace="/Events/" folder="/Events/" name="Disruption" description="" GUID="609486A5-2B49-8316-954E-49E9C1FF5FD0" ownerProjectName="MarineTransportLogistics" superEventPath="" ttlUnits="Seconds" channelURI="/Channels/Kafka" destinationName="PortUpdate">
+  <properties name="EventDescription" ownerProjectName="MarineTransportLogistics" conceptTypePath="/Events/Disruption" ownerPath="/Events/Disruption"/>
+  <properties name="EventType" ownerProjectName="MarineTransportLogistics" conceptTypePath="/Events/Disruption" ownerPath="/Events/Disruption">
+    <domainInstances resourcePath="/Concepts/PortDisruptor" ownerProperty="//@properties.1"/>
+  </properties>
+  <properties name="AlternativePort" ownerProjectName="MarineTransportLogistics" conceptTypePath="/Events/Disruption" ownerPath="/Events/Disruption">
+    <domainInstances resourcePath="/Concepts/Port" ownerProperty="//@properties.2"/>
+  </properties>
+  <properties name="Source" ownerProjectName="MarineTransportLogistics" conceptTypePath="/Events/Disruption" ownerPath="/Events/Disruption">
+    <domainInstances resourcePath="/Concepts/Port" ownerProperty="//@properties.3"/>
+  </properties>
+  <expiryAction folder="/Events/Disruption" name="RouteDisruptor_expiryAction" ownerProjectName="MarineTransportLogistics" actionText="" conditionText="">
+    <symbols>
+      <symbolList idName="routedisruptor" type="/Events/Disruption"/>
+    </symbols>
+  </expiryAction>
+</event:SimpleEvent>

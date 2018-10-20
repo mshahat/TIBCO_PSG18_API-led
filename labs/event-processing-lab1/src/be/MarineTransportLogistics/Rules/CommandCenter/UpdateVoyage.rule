@@ -1,0 +1,31 @@
+/**
+ * @description 
+ * @author sbagi-mbp2
+ */
+rule Rules.CommandCenter.UpdateVoyage {
+	attribute {
+		priority = 2;
+		forwardChain = true;
+	}
+	declare {
+		Events.FleetUpdate voyageUpdate;
+		Concepts.Voyage existingVoyage;
+	}
+	when {
+		existingVoyage.ItineraryID == XPath.evalAsString("xpath://<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<xpath>\n    <expr>$voyageUpdate/payload/tns:Voyage/ItineraryID</expr>\n    <namespaces>\n        <namespace URI=\"http://www.w3.org/2001/XMLSchema\" pfx=\"xsd\"/>\n        <namespace URI=\"www.tibco.com/be/ontology/Concepts/Voyage\" pfx=\"tns\"/>\n    </namespaces>\n    <variables>\n        <variable>voyageUpdate</variable>\n    </variables>\n</xpath>");
+		existingVoyage.Ship == XPath.evalAsString("xpath://<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<xpath>\n    <expr>$voyageUpdate/payload/tns:Voyage/Ship</expr>\n    <namespaces>\n        <namespace URI=\"http://www.w3.org/2001/XMLSchema\" pfx=\"xsd\"/>\n        <namespace URI=\"www.tibco.com/be/ontology/Concepts/Voyage\" pfx=\"tns\"/>\n    </namespaces>\n    <variables>\n        <variable>voyageUpdate</variable>\n    </variables>\n</xpath>");
+	}
+	then {
+		existingVoyage.ToPort = XPath.evalAsString("xpath://<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<xpath>\n    <expr>tib:if-absent($voyageUpdate/payload/tns:Voyage/ToPort, $existingVoyage/ToPort)</expr>\n    <namespaces>\n        <namespace URI=\"http://www.w3.org/2001/XMLSchema\" pfx=\"xsd\"/>\n        <namespace URI=\"www.tibco.com/be/ontology/Concepts/Voyage\" pfx=\"tns\"/>\n        <namespace URI=\"http://www.tibco.com/bw/xslt/custom-functions\" pfx=\"tib\"/>\n    </namespaces>\n    <variables>\n        <variable>voyageUpdate</variable>\n        <variable>existingVoyage</variable>\n    </variables>\n</xpath>");
+		existingVoyage.EstimatedArrival = XPath.evalAsDateTime("xpath://<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<xpath>\n    <expr>if (exists($voyageUpdate/payload/tns:Voyage/EstimatedArrival)) then $voyageUpdate/payload/tns:Voyage/EstimatedArrival else $existingVoyage/EstimatedArrival</expr>\n    <namespaces>\n        <namespace URI=\"http://www.w3.org/2001/XMLSchema\" pfx=\"xsd\"/>\n        <namespace URI=\"www.tibco.com/be/ontology/Concepts/Voyage\" pfx=\"tns\"/>\n        <namespace URI=\"http://www.tibco.com/bw/xslt/custom-functions\" pfx=\"tib\"/>\n    </namespaces>\n    <variables>\n        <variable>voyageUpdate</variable>\n        <variable>voyageUpdate</variable>\n        <variable>existingVoyage</variable>\n    </variables>\n</xpath>");
+		existingVoyage.LoadDelivered=XPath.evalAsBoolean("xpath://<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<xpath>\n    <expr>xsd:boolean(tib:if-absent($voyageUpdate/payload/tns:Voyage/LoadDelivered, string($existingVoyage/LoadDelivered)))</expr>\n    <namespaces>\n        <namespace URI=\"http://www.w3.org/2001/XMLSchema\" pfx=\"xsd\"/>\n        <namespace URI=\"www.tibco.com/be/ontology/Concepts/Voyage\" pfx=\"tns\"/>\n        <namespace URI=\"http://www.tibco.com/bw/xslt/custom-functions\" pfx=\"tib\"/>\n    </namespaces>\n    <variables>\n        <variable>voyageUpdate</variable>\n        <variable>existingVoyage</variable>\n    </variables>\n</xpath>");
+		existingVoyage.CurrentLocation=XPath.evalAsString("xpath://<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<xpath>\n    <expr>tib:if-absent($voyageUpdate/payload/tns:Voyage/CurrentLocation, $existingVoyage/CurrentLocation)</expr>\n    <namespaces>\n        <namespace URI=\"http://www.w3.org/2001/XMLSchema\" pfx=\"xsd\"/>\n        <namespace URI=\"www.tibco.com/be/ontology/Concepts/Voyage\" pfx=\"tns\"/>\n        <namespace URI=\"http://www.tibco.com/bw/xslt/custom-functions\" pfx=\"tib\"/>\n    </namespaces>\n    <variables>\n        <variable>voyageUpdate</variable>\n        <variable>existingVoyage</variable>\n    </variables>\n</xpath>");
+		existingVoyage.ActualArrival=XPath.evalAsDateTime("xpath://<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<xpath>\n    <expr>if (exists($voyageUpdate/payload/tns:Voyage/ActualArrival)) then $voyageUpdate/payload/tns:Voyage/ActualArrival else $existingVoyage/ActualArrival</expr>\n    <namespaces>\n        <namespace URI=\"http://www.w3.org/2001/XMLSchema\" pfx=\"xsd\"/>\n        <namespace URI=\"www.tibco.com/be/ontology/Concepts/Voyage\" pfx=\"tns\"/>\n    </namespaces>\n    <variables>\n        <variable>voyageUpdate</variable>\n        <variable>voyageUpdate</variable>\n        <variable>existingVoyage</variable>\n    </variables>\n</xpath>");
+		existingVoyage.DelayReason=XPath.evalAsString("xpath://<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<xpath>\n    <expr>tib:if-absent($voyageUpdate/payload/tns:Voyage/DelayReason, $existingVoyage/DelayReason)</expr>\n    <namespaces>\n        <namespace URI=\"http://www.w3.org/2001/XMLSchema\" pfx=\"xsd\"/>\n        <namespace URI=\"www.tibco.com/be/ontology/Concepts/Voyage\" pfx=\"tns\"/>\n        <namespace URI=\"http://www.tibco.com/bw/xslt/custom-functions\" pfx=\"tib\"/>\n    </namespaces>\n    <variables>\n        <variable>voyageUpdate</variable>\n        <variable>existingVoyage</variable>\n    </variables>\n</xpath>");
+		
+		Event.consumeEvent(voyageUpdate);
+		System.debugOut("***** Voyage " + existingVoyage@extId + " updated");
+		System.debugOut(Instance.serializeUsingDefaults(existingVoyage));
+		
+	}
+}

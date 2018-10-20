@@ -1,0 +1,22 @@
+/**
+ * @description 
+ * @author sbagi-mbp2
+ */
+rule Rules.CommandCenter.EvictDisruption {
+	attribute {
+		priority = 5;
+		forwardChain = true;
+	}
+	declare {
+		Events.DisruptorEviction evict;
+		Concepts.Disruption disruption;
+	}
+	when {
+		disruption@extId == evict@closure;
+	}
+	then {
+		System.debugOut("***** Disruption evicted : " + disruption@extId);
+		Instance.deleteInstance(disruption);
+		Event.consumeEvent(evict);
+	}
+}

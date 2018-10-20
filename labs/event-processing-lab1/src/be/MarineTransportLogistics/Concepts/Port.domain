@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dm:Domain xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dm="http:///com/tibco/cep/designtime/core/model/domain" namespace="/Concepts/" folder="/Concepts/" name="Port" description="" GUID="6E348F45-3ED7-9FFA-590D-28F769164AA5" ownerProjectName="MarineTransportLogistics">
+  <entries xsi:type="dm:Single" description="Port of Los Angeles" value="Los Angeles"/>
+  <entries xsi:type="dm:Single" description="Port of Shanghai" value="Shanghai"/>
+  <entries xsi:type="dm:Single" description="Port of Dover" value="Dover"/>
+  <entries xsi:type="dm:Single" description="Port of Singapore" value="Singapore"/>
+  <entries xsi:type="dm:Single" description="Port of San Francisco" value="San Francisco"/>
+  <entries xsi:type="dm:Single" description="Port of Hong Kong" value="Hong Kong"/>
+  <entries xsi:type="dm:Single" description="Port of Rotterdam" value="Rotterdam"/>
+  <entries xsi:type="dm:Single" description="Port of Tokyo" value="Tokyo"/>
+  <entries xsi:type="dm:Single" description="Port of Valencia" value="Valencia"/>
+  <entries xsi:type="dm:Single" description="Port of New York" value="New York"/>
+  <entries xsi:type="dm:Single" description="Port of Montreal" value="Montreal"/>
+  <entries xsi:type="dm:Single" description="Port of Colombo" value="Colombo"/>
+</dm:Domain>
