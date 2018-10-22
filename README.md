@@ -22,6 +22,7 @@ You should be able to run the labs on your OS of choice
 * macOS
 * Windows 10
   * **Make sure to enable hardware virtualisation in BIOS**
+  * **If you have BitLocker, you might need help from Help Desk**
 * Linux e.g. CentOS or Ubuntu
 
 ## Accounts
