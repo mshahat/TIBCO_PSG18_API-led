@@ -70,6 +70,7 @@ Instructions for using a package manager is included.
 * Windows 10, https://chocolatey.org/  use Powershell
 
 ### software
+* TIBCO BusinessStudio
 * Text editor e.g. Microsoft VSCode https://code.visualstudio.com/
 * Virtualbox > 5.2.18 , to run a vm for the Events Processing lab https://www.virtualbox.org/
 * An HTTP client, to test APIs
@@ -82,7 +83,11 @@ Instructions for using a package manager is included.
 docker pull mysql
 ```
 
-### I. Text Editor 
+### I. TIBCO BW 6.5.x or TIBCO BWCE 2.4.x
+Only **TIBCO BusinessStudio** is needed. 
+Download the installer through https://edelivery.tibco.com
+
+### II. Text Editor 
 Feel free to use the text editor of choice. 
 
 _macOS_
@@ -94,7 +99,7 @@ _Windows 10_
 C:\> choco install vscode
 ```
 
-### II. Virtualbox 
+### III. Virtualbox 
 For those using vmware fusion or workstation, you could try to import the vm without the need for virtualbox 
 
 _macOS_
@@ -106,7 +111,7 @@ _Windows 10_
 C:\> choco install virtualbox
 ```
 
-### III. Http client
+### IV. Http client
 
 #### Postman 
 _macOS_
@@ -127,7 +132,7 @@ _Windows 10_
 ```
 
 ```
-### IV. Docker
+### V. Docker
 _macOS_
 https://store.docker.com/editions/community/docker-ce-desktop-mac 
 
