@@ -42,7 +42,7 @@ Expected to use the following capabilities
 ## Software for Events Processing Labs
 Choose one of two options to run the Events Processing labs
 
-1. An Ubuntu vm with software required ( recommended )
+A. An Ubuntu vm with software required ( recommended )
 Download an Ubuntu linux vm for the EventProcessing Labs [HERE](https://drive.google.com/open?id=1guqTkECGv5FU5wUCEzGSX6KOq0OJDgpu)
 
 * You will need to be signed in using TIBCO Google Account
@@ -54,7 +54,7 @@ Download an Ubuntu linux vm for the EventProcessing Labs [HERE](https://drive.go
 * Use `sudo` for privilegded actions
 * Use user `tibco` with `tibco123` to login
 
-2. download & install the following software on your laptop 
+B. download & install the following software on your laptop 
 * TIBCO BusinessEvents Enterprise Edition 5.5
 * [Apache kafka_2.11-1.0.2](https://archive.apache.org/dist/kafka/1.0.2/kafka_2.11-1.0.2.tgz)
 * if you choose to install the software on your machine, we suggest you use the following path if you're on Linux or macOS
