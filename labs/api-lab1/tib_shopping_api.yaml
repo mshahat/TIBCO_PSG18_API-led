@@ -1,0 +1,264 @@
+---
+swagger: "2.0"
+info:
+  description: "The shopping api is supporting Digital Channels for TIBCO PSG 2018 "
+  version: "2.1.3"
+  title: "Shopping API @ TIBCO PSG"
+  termsOfService: "https://api.tibco.com/termsOfService"
+  contact:
+    name: "TIBCO PSG Group Integration Domain"
+    url: "https://github.com/mshahat/TIBCO_PSG18_API-led"
+    email: "mshahat@tibco.com"
+  license:
+    name: "TIBCO PSG License 1.1"
+    url: "https://terms.tibco.com"
+host: "api.tibco.com"
+basePath: "/secure/api/{access}/shoppingAPI/v2"
+schemes:
+- "https"
+consumes:
+- "application/json"
+produces:
+- "application/json"
+security:
+- API Key: []
+paths:
+  /customers:
+    get:
+      tags:
+      - "Customers"
+      summary: "list and search customers"
+      description: "Retrive list of Customers"
+      operationId: "getCustomer"
+      produces:
+      - "application/json"
+      parameters: []
+      responses:
+        200:
+          description: "200, OK."
+          schema:
+            $ref: "#/definitions/errorObj"
+        400:
+          description: "400, Client ERROR."
+          schema:
+            $ref: "#/definitions/errorObj"
+        500:
+          description: "500, Server ERROR."
+          schema:
+            $ref: "#/definitions/errorObj"
+    post:
+      tags:
+      - "Customers"
+      summary: "register a new customer"
+      description: "register a new customer"
+      operationId: "registerCustomer"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "body"
+        in: "body"
+        required: true
+        schema:
+          $ref: "#/definitions/registerCustomerRequestObj"
+      responses:
+        201:
+          description: "Status 201"
+          schema:
+            $ref: "#/definitions/writeResponseObj"
+        400:
+          description: "Status 400"
+          schema:
+            $ref: "#/definitions/errorObj"
+        500:
+          description: "Status 500"
+          schema:
+            $ref: "#/definitions/errorObj"
+  /customers/{customerId}/orders:
+    get:
+      tags:
+      - "Orders"
+      summary: "list and search orders of a customer"
+      operationId: "getCustomerOrders"
+      produces:
+      - "application/json"
+      parameters: []
+      responses:
+        200:
+          description: "Status 200"
+          schema:
+            $ref: "#/definitions/customerOrdersResponseArray"
+    post:
+      tags:
+      - "Orders"
+      summary: "place a new order for a customer"
+      operationId: "placeCustomerOrder"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "body"
+        in: "body"
+        required: true
+        schema:
+          $ref: "#/definitions/placeCustomerOrderRequestObj"
+      responses:
+        201:
+          description: "Status 201"
+          schema:
+            $ref: "#/definitions/writeResponseObj"
+        400:
+          description: "Status 400"
+          schema:
+            $ref: "#/definitions/errorObj"
+        500:
+          description: "Status 500"
+          schema:
+            $ref: "#/definitions/errorObj"
+    parameters:
+    - name: "customerId"
+      in: "path"
+      required: true
+      type: "string"
+      description: "the uuid of the customer under enquiry"
+securityDefinitions:
+  API Key:
+    type: "apiKey"
+    name: "api_key"
+    in: "header"
+  Basic authentication:
+    description: "basic authentication security"
+    type: "basic"
+definitions:
+  errorObj:
+    type: "object"
+    required:
+    - "contextInfo"
+    - "errorCode"
+    - "errorId"
+    - "errorMsg"
+    - "errorType"
+    properties:
+      errorId:
+        type: "string"
+        description: "Error Identifier UUID / GUID"
+        example: "B9374907-909D-4567-9DA4-29598FB3B7B9"
+      errorMsg:
+        type: "string"
+        description: "A message associated with the error"
+        example: "Oops, internal server error. we will get in touch"
+      errorCode:
+        type: "string"
+        description: "An error code deteremined in design time and specified by the\
+          \ service designer"
+        example: "TIB-NO-SUCH-CUSTOMER-001"
+      errorType:
+        type: "string"
+        description: "Type of error (TECHNICAL | BUSINESS)"
+        example: "TECHNICAL"
+      contextInfo:
+        type: "array"
+        items:
+          $ref: "#/definitions/contextInfo"
+    description: "reusable error object as response to standardise on error returned\
+      \ to clients by restful services as part of the web style"
+  contextInfo:
+    type: "object"
+    required:
+    - "name"
+    - "value"
+    properties:
+      name:
+        type: "string"
+        description: "name of the context attribute."
+        example: "The Customer orderId with issue"
+      value:
+        type: "string"
+        description: "value of context attribute."
+        example: "1234-1234-1234"
+  writeResponseObj:
+    type: "object"
+    required:
+    - "href"
+    - "id"
+    properties:
+      id:
+        type: "string"
+        description: "identifier of the created or updated resource UUID"
+      href:
+        type: "string"
+        description: "href of the created or updated resource instance. that's part\
+          \ of implementing HATEOS"
+    description: "a common response object for updates: id, href"
+  registerCustomerRequestObj:
+    type: "object"
+    required:
+    - "address"
+    - "mobilePhone"
+    - "name"
+    properties:
+      name:
+        type: "string"
+        description: "Customer name"
+      address:
+        type: "string"
+        description: "Customer Address"
+      creditLimit:
+        type: "string"
+        description: "Customer Credit Limit"
+      mobilePhone:
+        type: "string"
+        description: "Customer Mobile phone number"
+      customerStatus:
+        type: "string"
+        description: "Status of Customer, Premium , Standard"
+        enum:
+        - "PREMIUM"
+        - "STANDARD"
+  customerOrdersResponseArray:
+    type: "object"
+    properties:
+      _metadata:
+        $ref: "#/definitions/metadataResponseObj"
+      _items:
+        type: "array"
+        items:
+          $ref: "#/definitions/orderResponseObj"
+  metadataResponseObj:
+    type: "object"
+    properties:
+      itemsCount:
+        type: "integer"
+        description: "count of items"
+      pageNumber:
+        type: "integer"
+  orderResponseObj:
+    type: "object"
+    properties:
+      id:
+        type: "string"
+        description: "the identifier of customer order"
+      createdDate:
+        type: "string"
+        description: "the date in which the order was placed"
+      lastModifiedDate:
+        type: "string"
+        description: "the date in which the order was amended in case"
+    description: "order object as part of response"
+  placeCustomerOrderRequestObj:
+    type: "object"
+    properties:
+      lineItems:
+        type: "array"
+        items:
+          type: "object"
+          properties:
+            itemId:
+              type: "string"
+            itemDescription:
+              type: "string"
+            quantity:
+              type: "integer"
+    description: "Order object for placing an order"
